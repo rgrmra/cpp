@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 22:22:03 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/01 22:43:10 by rde-mour         ###   ########.org.br   */
+/*   Created: 2024/07/02 20:23:17 by rde-mour          #+#    #+#             */
+/*   Updated: 2024/07/02 21:50:09 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
+#include <cstdlib>
 
-Contact::Contact(void)
+int	main(void)
 {
-	
-}
+	PhoneBook phone_book;
 
-Contact::~Contact(void)
-{
-	
+	for (int i = 0; i < 10; i++)
+		phone_book.add_contact();
+	phone_book.search_contact();
+
+	return EXIT_SUCCESS;
 }

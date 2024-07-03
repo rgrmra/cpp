@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 22:01:01 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/01 22:21:29 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/02 19:34:51 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,25 @@
 class	Contact
 {
 	private:
-		std::string	_firstName;
-		std::string	_lastName;
+		std::string	_first_name;
+		std::string	_last_name;
 		std::string	_nickname;
-		std::string	_phoneNumber;
-		std::string	_darkestSecret;
+		std::string	_phone_number;
+		std::string	_darkest_secret;
+
 	public:
 		Contact(void);
-		void		setFirstName(std::string &firstName);
-		std::string	getFirstName(void);
-		void		setLastName(std::string &lastName);
-		std::string	getLastName(void);
-		void		setNickName(std::string &nickName);
-		std::string	getNickName(void);
-		void		setPhoneNumber(std::string &phoneNumber);
-		std::string	getPhoneNumber(void);
-		void		setDarkestSecret(std::string &darkestSecret);
-		std::string	getDarkestSecret(void);
 		~Contact(void);
+		void		set_first_name(const std::string &first_name);
+		std::string	get_first_name(void);
+		void		set_last_name(const std::string &last_name);
+		std::string	get_last_name(void);
+		void		set_nickname(const std::string &nickname);
+		std::string	get_nickname(void);
+		void		set_phone_number(const std::string &phone_number);
+		std::string	get_phone_number(void);
+		void		set_darkest_secret(const std::string &darkest_secret);
+		std::string	get_darkest_secret(void);
 };
 
 #endif

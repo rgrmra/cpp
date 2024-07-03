@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 20:08:29 by rde-mour          #+#    #+#              #
-#    Updated: 2024/07/01 20:14:06 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/07/02 20:34:57 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ RESET				= $(shell tput sgr0)
 
 NAME				= phonebook
 
-FILES				=
+FILES				= Contact.cpp \
+					  PhoneBook.cpp \
+					  main.cpp
 
 OBJS				= $(FILES:%.cpp=%.o)
 
@@ -33,7 +35,7 @@ $(NAME):			$(OBJS)
 					@$(COMPILER) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BLUE)Compiled $(NAME) successfully$(RESET)"
 
-$(OBJS): 			$(FILES)
+%.o:	 			%.cpp
 					@$(COMPILER) $(CFLAGS) -c $< -o $@
 					@echo "$(GREEN)Compiled$(RESET) $(notdir $<)"
 
