@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:57:31 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/03 19:16:53 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/04 20:34:53 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,17 @@
 #  define CONTACTS_LIMIT 8
 # endif
 
+# define FNAME	"First Name :"
+# define LNAME	"Last Name :"
+# define NNAME	"Nickname :"
+# define PHONE	"Phone Number: "
+# define SECRET	"Darkest Secret: "
+
 class	PhoneBook
 {
 	private:
 		Contact _contacts[CONTACTS_LIMIT];
-		short	_index;
+		int		_index;
 
 		int		get_index();
 		void	add_first_name();
