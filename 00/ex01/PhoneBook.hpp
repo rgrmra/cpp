@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:57:31 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/02 20:00:07 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/03 19:16:53 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ class	PhoneBook
 		Contact _contacts[CONTACTS_LIMIT];
 		short	_index;
 
+		int		get_index();
 		void	add_first_name();
 		void	add_last_name();
 		void	add_nickname();
 		void	add_phone_number();
 		void	add_darkest_secret();
+		void	display_contacts();
 
 	public:
 		PhoneBook(void);
