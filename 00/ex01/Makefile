@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 20:08:29 by rde-mour          #+#    #+#              #
-#    Updated: 2024/07/02 20:34:57 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/07/05 19:27:37 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ NAME				= phonebook
 
 FILES				= Contact.cpp \
 					  PhoneBook.cpp \
+					  Prompt.cpp \
 					  main.cpp
 
 OBJS				= $(FILES:%.cpp=%.o)

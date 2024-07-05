@@ -1,34 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Prompt.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 20:23:17 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/05 19:32:15 by rde-mour         ###   ########.org.br   */
+/*   Created: 2024/07/05 19:07:33 by rde-mour          #+#    #+#             */
+/*   Updated: 2024/07/05 19:28:07 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
 #include "Prompt.hpp"
+#include <cstdio>
 #include <iostream>
 #include <string>
 
-int	main(void)
+Prompt::Prompt()
 {
-	PhoneBook	phone_book;
-	Prompt		prompt;
-	std::string	input;
-	
+
+}
+
+Prompt::~Prompt()
+{
+
+}
+
+bool	invalid(std::string str)
+{
+	if (str.empty())
+	{
+		std::clearerr(stdin);
+		std::cin.clear();
+		return true;
+	}
+	return false;
+}
+
+std::string	Prompt::getline(std::string str)
+{
+	std::string input;
+
 	do
 	{
-		input = prompt.getline("Choose: ");
-		if (input == "ADD")
-			phone_book.add_contact();
-		else if (input == "SEARCH")
-			phone_book.search_contact();
-		else
-			std::cout << "Invalid!" << std::endl;
-	} while (input != "EXIT");
+		std::cout << str;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+			std::cout << std::endl;
+	}
+	while (invalid(input));
+	return input;
 }

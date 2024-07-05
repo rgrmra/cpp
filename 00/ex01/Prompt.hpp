@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Prompt.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 20:23:17 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/05 19:32:15 by rde-mour         ###   ########.org.br   */
+/*   Created: 2024/07/05 19:10:21 by rde-mour          #+#    #+#             */
+/*   Updated: 2024/07/05 19:29:29 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include "Prompt.hpp"
-#include <iostream>
-#include <string>
+#ifndef PROMPT_H
+# define PROMPT_H
 
-int	main(void)
+# include <string>
+
+class Prompt
 {
-	PhoneBook	phone_book;
-	Prompt		prompt;
-	std::string	input;
-	
-	do
-	{
-		input = prompt.getline("Choose: ");
-		if (input == "ADD")
-			phone_book.add_contact();
-		else if (input == "SEARCH")
-			phone_book.search_contact();
-		else
-			std::cout << "Invalid!" << std::endl;
-	} while (input != "EXIT");
-}
+	public:
+		Prompt();
+		~Prompt();
+		std::string	getline(std::string str);
+};
+
+#endif

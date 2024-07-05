@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:57:31 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/04 20:34:53 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/05 19:24:11 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHONEBOOK_HPP
 
 # include "Contact.hpp"
+#include "Prompt.hpp"
 
 # ifndef CONTACTS_LIMIT
 #  define CONTACTS_LIMIT 8
@@ -30,6 +31,7 @@ class	PhoneBook
 	private:
 		Contact _contacts[CONTACTS_LIMIT];
 		int		_index;
+		Prompt	_prompt;
 
 		int		get_index();
 		void	add_first_name();
