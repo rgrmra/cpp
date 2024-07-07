@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:57:31 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/05 19:24:11 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/07 19:10:12 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,19 @@
 #  define CONTACTS_LIMIT 8
 # endif
 
-# define FNAME	"First Name :"
-# define LNAME	"Last Name :"
-# define NNAME	"Nickname :"
-# define PHONE	"Phone Number: "
-# define SECRET	"Darkest Secret: "
+# define RED	"\033[1;91m"
+# define GREEN	"\033[1;92m"
+# define YELLOW	"\033[1;93m"
+# define COLOR	"\033[1;94m"
+# define HEADER	"\033[0;104m"
+# define LINE	"\033[0;53m"
+# define RESET	"\033[0;m"
+
+# define FNAME	GREEN "First Name: " RESET
+# define LNAME	GREEN "Last Name: " RESET
+# define NNAME	GREEN "Nickname: " RESET
+# define PHONE	GREEN "Phone Number: " RESET
+# define SECRET	GREEN "Darkest Secret: " RESET
 
 class	PhoneBook
 {
@@ -39,7 +47,7 @@ class	PhoneBook
 		void	add_nickname();
 		void	add_phone_number();
 		void	add_darkest_secret();
-		void	display_contacts();
+		bool	display_contacts();
 
 	public:
 		PhoneBook(void);
