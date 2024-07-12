@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/07/01 20:09:55 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/07/12 14:53:52 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME):			$(OBJS)
 					@$(COMPILER) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BLUE)Compiled $(NAME) successfully$(RESET)"
 
-$(OBJS): 			$(FILES)
+%.o:				%.cpp
 					@$(COMPILER) $(CFLAGS) -c $< -o $@
 					@echo "$(GREEN)Compiled$(RESET) $(notdir $<)"
 
