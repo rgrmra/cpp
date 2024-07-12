@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:57:31 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/08 10:53:15 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/12 15:15:32 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PHONEBOOK_HPP
 
 # include "Contact.hpp"
-#include "Prompt.hpp"
+# include "Prompt.hpp"
 
 # ifndef CONTACTS_LIMIT
 #  define CONTACTS_LIMIT 8
@@ -41,21 +41,21 @@ class	PhoneBook
 		int		_index;
 		Prompt	_prompt;
 
-		int		_get_index();
-		bool	invalid_input(std::string input, int (*function)(int));
-		void	_add_first_name();
-		void	_add_last_name();
-		void	_add_nickname();
-		void	_add_phone_number();
-		void	_add_darkest_secret();
-		void	_setwfill(unsigned long width, char fill, std::string str);
-		bool	_display_contacts();
+		int		_getIndex();
+		bool	_invalidInput(std::string &input, int (*function)(int));
+		void	_addFirstName();
+		void	_addLastName();
+		void	_addNickname();
+		void	_addPhoneNumber();
+		void	_addDarkestSecret();
+		void	_setWFill(unsigned long width, char fill, std::string str);
+		bool	_displayContacts();
 
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	add_contact();
-		void	search_contact();
+		void	addContact();
+		void	searchContact();
 };
 
 #endif
