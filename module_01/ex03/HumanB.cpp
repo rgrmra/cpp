@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 22:08:20 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/12 22:25:22 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/12 22:45:29 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 #include "Weapon.hpp"
 #include <iostream>
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
 {
-	_name = name;
-	_weapon = NULL;
+
 }
 
 HumanB::~HumanB()
