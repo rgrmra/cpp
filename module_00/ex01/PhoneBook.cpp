@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 19:37:42 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/12 15:14:16 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/12 22:58:51 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <sstream>
 #include <string>
 
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook(void) : _index(0)
 {
-	_index = 0;
+
 }
 
 PhoneBook::~PhoneBook(void)
