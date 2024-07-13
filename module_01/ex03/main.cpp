@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 21:03:35 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/12 22:28:12 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/07/12 23:06:24 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 	jim.attack();
 	jim.setWeapon(club);
 	jim.attack();
-	club.setType("some other type of club");
+	club.setType("crude spiked club");
 	jim.attack();
 
 	return EXIT_SUCCESS;
