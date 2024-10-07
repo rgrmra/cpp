@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/07/12 14:53:52 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/10/07 17:31:22 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ RED					= $(shell tput setaf 1)
 GREEN				= $(shell tput setaf 2)
 YELLOW				= $(shell tput setaf 3)
 BLUE				= $(shell tput setaf 4)
-MAGENT				= $(shell tput setaf 5)
+MAGENTA				= $(shell tput setaf 5)
 RESET				= $(shell tput sgr0)
 
 NAME				= megaphone
