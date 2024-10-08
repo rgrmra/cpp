@@ -6,69 +6,63 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 22:22:03 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/12 15:06:41 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/08 17:17:28 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <string>
 
-Contact::Contact(void)
+Contact::Contact() {}
+
+Contact::~Contact() {}
+
+void Contact::set_first_name(const std::string& first_name)
 {
-	
+	_first_name = first_name;
 }
 
-Contact::~Contact(void)
+std::string Contact::get_first_name()
 {
-	
+	return _first_name;
 }
 
-void		Contact::setFirstName(const std::string &firstName)
+void Contact::set_last_name(const std::string& last_name)
 {
-	_firstName = firstName;
+	_last_name = last_name;
 }
 
-std::string	Contact::getFirstName(void)
+std::string Contact::get_last_name()
 {
-	return _firstName;
+	return _last_name;
 }
 
-void		Contact::setLastName(const std::string &lastName)
-{
-	_lastName = lastName;
-}
-
-std::string	Contact::getLastName(void)
-{
-	return _lastName;
-}
-
-void		Contact::setNickname(const std::string &nickname)
+void Contact::set_nickname(const std::string& nickname)
 {
 	_nickname = nickname;
 }
 
-std::string	Contact::getNickname(void)
+std::string Contact::get_nickname()
 {
 	return _nickname;
 }
 
-void		Contact::setPhoneNumber(const std::string &phoneNumber)
+void Contact::set_phone_number(const std::string& phone_number)
 {
-	_phoneNumber = phoneNumber;
+	_phone_number = phone_number;
 }
 
-std::string	Contact::getPhoneNumber(void)
+std::string Contact::get_phone_number()
 {
-	return _phoneNumber;
+	return _phone_number;
 }
 
-void		Contact::setDarkestSecret(const std::string &darkestSecret)
+void Contact::set_darkest_secret(const std::string& darkest_secret)
 {
-	_darkestSecret = darkestSecret;
-};
+	_darkest_secret = darkest_secret;
+}
 
-std::string	Contact::getDarkestSecret(void)
+std::string Contact::get_darkest_secret()
 {
-	return _darkestSecret;
+	return _darkest_secret;
 }

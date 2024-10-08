@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 20:23:17 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/07 21:56:06 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/08 17:12:28 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include <ostream>
 #include <string>
 
-int	main(void)
+int main(void)
 {
-	PhoneBook	phoneBook;
-	Prompt		prompt;
-	std::string	input;
+	PhoneBook phoneBook;
+	Prompt prompt;
+	std::string input;
 	
 	do
 	{
@@ -31,12 +31,12 @@ int	main(void)
 			<< COLOR "EXIT: " RESET "quits PhoneBook"
 			<< std::endl << std::endl;
 
-		input = prompt.getline(COLOR"Command: \033[0;m");
+		input = prompt.get_line(COLOR "Command: \033[0;m");
 
 		if (input == "ADD")
-			phoneBook.addContact();
+			phoneBook.add_contact();
 		else if (input == "SEARCH")
-			phoneBook.searchContact();
+			phoneBook.search_contact();
 		else if (input != "EXIT")
 			std::cout << std::endl
 				<< RED "Invalid command!" RESET
