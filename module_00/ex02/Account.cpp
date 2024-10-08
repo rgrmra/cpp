@@ -6,13 +6,18 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 19:45:11 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/07 22:03:53 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/08 17:47:30 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
 #include <ctime>
 #include <iostream>
+#include "Account.hpp"
+
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit)
 {
@@ -81,7 +86,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 			<< "p_amount:" << _amount << ";"
 			<< "withdrawal:refused"
 			<< std::endl;
-		return (false);
+		return false;
 	}
 
 	_amount -= withdrawal;
@@ -99,12 +104,12 @@ bool	Account::makeWithdrawal(int withdrawal)
 		<< "nb_withdrawals:" << _nbWithdrawals
 		<< std::endl;
 
-	return (true);
+	return true;
 }
 
 int		Account::checkAmount(void) const
 {
-	return (_amount);
+	return _amount;
 }
 
 void	Account::displayStatus(void) const
@@ -121,33 +126,34 @@ void	Account::displayStatus(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	std::time_t		rawtime;
-	struct std::tm	*timeinfo;
-	char			buffer[20];
-
+	std::time_t rawtime;
 	std::time(&rawtime);
+
+	struct std::tm *timeinfo;
 	timeinfo = localtime(&rawtime);
 
+	char buffer[20];
 	std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", timeinfo);
+
 	std::cout << buffer;
 }
 
 int	Account::getNbAccounts(void)
 {
-	return (_nbAccounts);
+	return _nbAccounts;
 }
 
 int	Account::getTotalAmount(void)
 {
-	return (_totalAmount);
+	return _totalAmount;
 }
 
 int	Account::getNbDeposits(void)
 {
-	return (_totalNbDeposits);
+	return _totalNbDeposits;
 }
 
 int	Account::getNbWithdrawals(void)
 {
-	return (_totalNbWithdrawals);
+	return _totalNbWithdrawals;
 }
