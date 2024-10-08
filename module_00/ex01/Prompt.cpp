@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 19:07:33 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/08 17:13:23 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/08 17:26:00 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Prompt::~Prompt()
 
 }
 
-bool Prompt::is_valid_input(std::string str)
+bool Prompt::_is_valid_input(std::string str)
 {
 	if (str.empty())
 	{
@@ -49,7 +49,7 @@ std::string Prompt::get_line(std::string str)
 		if (std::cin.eof())
 			std::cout << std::endl;
 	}
-	while (not is_valid_input(input));
+	while (not _is_valid_input(input));
 
 	return input;
 }

@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 19:37:42 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/08 17:16:36 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/08 17:27:58 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ PhoneBook::PhoneBook(void) :
 PhoneBook::~PhoneBook(void)
 {}
 
-size_t PhoneBook::get_index()
+size_t PhoneBook::_get_index()
 {
 	return _index % CONTACTS_LIMIT;
 }
 
-bool PhoneBook::is_valid_input(std::string &input, int (*function)(int))
+bool PhoneBook::_is_valid_input(std::string &input, int (*function)(int))
 {
 	for (size_t	i = 0; i < input.length(); i++)
 	{
@@ -38,97 +38,97 @@ bool PhoneBook::is_valid_input(std::string &input, int (*function)(int))
 	return true;
 }
 
-void PhoneBook::add_first_name()
+void PhoneBook::_add_first_name()
 {
 	std::string input = _prompt.get_line(COLOR "First name: " RESET);
 
-	if (not is_valid_input(input, std::isprint))
+	if (not _is_valid_input(input, std::isprint))
 	{
 		std::cout << std::endl
 			<< RED "Invalid first name!" RESET
 			<< std::endl << std::endl;
-		return add_first_name();
+		return _add_first_name();
 	}
 
-	_contacts[get_index()].set_first_name(input);
+	_contacts[_get_index()].set_first_name(input);
 }
 
-void PhoneBook::add_last_name()
+void PhoneBook::_add_last_name()
 {
 	std::string input = _prompt.get_line(COLOR "Last name: " RESET);
 
-	if (not is_valid_input(input, std::isprint))
+	if (not _is_valid_input(input, std::isprint))
 	{
 		std::cout << std::endl
 			<< RED "Invalid last name!" RESET
 			<< std::endl << std::endl;
-		return add_last_name();
+		return _add_last_name();
 	}
 
-	_contacts[get_index()].set_last_name(input);
+	_contacts[_get_index()].set_last_name(input);
 }
 
-void PhoneBook::add_nickname()
+void PhoneBook::_add_nickname()
 {
 	std::string input = _prompt.get_line(COLOR "Nickname: " RESET);
 
-	if (not is_valid_input(input, std::isprint))
+	if (not _is_valid_input(input, std::isprint))
 	{
 		std::cout << std::endl
 			<< RED "Invalid nickname!" RESET
 			<< std::endl << std::endl;
-		return add_nickname();
+		return _add_nickname();
 	}
 
-	_contacts[get_index()].set_nickname(input);
+	_contacts[_get_index()].set_nickname(input);
 }
 
-void PhoneBook::add_phone_number()
+void PhoneBook::_add_phone_number()
 {
 	std::string input = _prompt.get_line(COLOR "Phone number: " RESET);
 
-	if (not is_valid_input(input, std::isdigit))
+	if (not _is_valid_input(input, std::isdigit))
 	{
 		std::cout << std::endl
 			<< RED "Invalid phone number!" RESET
 			<< std::endl << std::endl;
-		return add_phone_number();
+		return _add_phone_number();
 	}
 
-	_contacts[get_index()].set_phone_number(input);
+	_contacts[_get_index()].set_phone_number(input);
 }
 
-void PhoneBook::add_darkest_secret()
+void PhoneBook::_add_darkest_secret()
 {
 	std::string input = _prompt.get_line(COLOR "Darkest secret: " RESET);
 
-	if (not is_valid_input(input, std::isprint))
+	if (not _is_valid_input(input, std::isprint))
 	{
 		std::cout << std::endl
 			<< RED "Invalid darkest secret!" RESET
 			<< std::endl << std::endl;
-		return add_darkest_secret();
+		return _add_darkest_secret();
 	}
 
-	_contacts[get_index()].set_darkest_secret(input);
+	_contacts[_get_index()].set_darkest_secret(input);
 }
 
 void PhoneBook::add_contact()
 {
 	std::cout << std::endl;
 
-	add_first_name();
-	add_last_name();
-	add_nickname();
-	add_phone_number();
-	add_darkest_secret();
+	_add_first_name();
+	_add_last_name();
+	_add_nickname();
+	_add_phone_number();
+	_add_darkest_secret();
 
 	_index++;
 
 	std::cout << std::endl;
 }
 
-void PhoneBook::set_wfill(std::string str)
+void PhoneBook::_set_wfill(std::string str)
 {
 	if (str.size() > TABLE_WIDTH)
 	{
@@ -146,7 +146,7 @@ void PhoneBook::set_wfill(std::string str)
 	}
 }
 
-bool PhoneBook::display_contacts()
+bool PhoneBook::_display_contacts()
 {
 
 	if (!_index)
@@ -157,10 +157,10 @@ bool PhoneBook::display_contacts()
 	}
 
 	std::cout << std::endl << "|";
-	set_wfill("Index");
-	set_wfill("First Name");
-	set_wfill("Last Name");
-	set_wfill("Nickname");
+	_set_wfill("Index");
+	_set_wfill("First Name");
+	_set_wfill("Last Name");
+	_set_wfill("Nickname");
 	std::cout << RESET << std::endl;
 
 	for (int i = 0; i < CONTACTS_LIMIT; i++)
@@ -172,9 +172,9 @@ bool PhoneBook::display_contacts()
 			<< std::setw(TABLE_WIDTH)
 			<< std::setfill(TABLE_FILL)
 			<< (i + 1) << "|";
-		set_wfill(_contacts[i].get_first_name());
-		set_wfill(_contacts[i].get_last_name());
-		set_wfill(_contacts[i].get_nickname());
+		_set_wfill(_contacts[i].get_first_name());
+		_set_wfill(_contacts[i].get_last_name());
+		_set_wfill(_contacts[i].get_nickname());
 		std::cout << RESET << std::endl;
 	}
 
@@ -186,11 +186,11 @@ bool PhoneBook::display_contacts()
 void PhoneBook::search_contact()
 {
 
-	if (not display_contacts())
+	if (not _display_contacts())
 		return;
 
 	std::string input = _prompt.get_line(COLOR "Choose index: " RESET);
-	if (not is_valid_input(input, std::isdigit))
+	if (not _is_valid_input(input, std::isdigit))
 	{
 		std::cout << std::endl
 			<< RED "It's not a number!" RESET

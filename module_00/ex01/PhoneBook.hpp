@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:57:31 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/08 17:11:04 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/08 17:26:13 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,15 @@ private:
 	size_t _index;
 	Prompt _prompt;
 
-	size_t get_index();
-	bool is_valid_input(std::string &input, int (*function)(int));
-	void add_first_name();
-	void add_last_name();
-	void add_nickname();
-	void add_phone_number();
-	void add_darkest_secret();
-	void set_wfill(std::string str);
-	bool display_contacts();
+	size_t _get_index();
+	bool _is_valid_input(std::string &input, int (*function)(int));
+	void _add_first_name();
+	void _add_last_name();
+	void _add_nickname();
+	void _add_phone_number();
+	void _add_darkest_secret();
+	void _set_wfill(std::string str);
+	bool _display_contacts();
 
 public:
 	PhoneBook(void);
