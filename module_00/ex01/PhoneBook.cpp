@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 19:37:42 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/07 21:37:18 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/07 21:57:08 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ PhoneBook::~PhoneBook(void)
 
 int	PhoneBook::_getIndex()
 {
-	return _index % CONTACTS_LIMIT;
+	return (_index % CONTACTS_LIMIT);
 }
 
 bool PhoneBook::_invalidInput(std::string &input, int (*function)(int))

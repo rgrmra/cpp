@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 19:07:33 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/07 19:11:06 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/07 21:55:56 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ bool	invalid(std::string str)
 	{
 		std::clearerr(stdin);
 		std::cin.clear();
-		return true;
+		return (true);
 	}
 
 	return (str.at(0) == ' ' || static_cast<size_t>(str.find("  ")) > -1);
@@ -50,5 +50,5 @@ std::string	Prompt::getline(std::string str)
 	}
 	while (invalid(input));
 
-	return input;
+	return (input);
 }
