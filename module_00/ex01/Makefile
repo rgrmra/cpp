@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 20:08:29 by rde-mour          #+#    #+#              #
-#    Updated: 2024/07/05 19:27:37 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/10/07 19:01:59 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ RED					= $(shell tput setaf 1)
 GREEN				= $(shell tput setaf 2)
 YELLOW				= $(shell tput setaf 3)
 BLUE				= $(shell tput setaf 4)
-MAGENT				= $(shell tput setaf 5)
+MAGENTA				= $(shell tput setaf 5)
 RESET				= $(shell tput sgr0)
 
 NAME				= phonebook
@@ -25,6 +25,8 @@ FILES				= Contact.cpp \
 					  main.cpp
 
 OBJS				= $(FILES:%.cpp=%.o)
+
+HEADERS				= -I ./
 
 COMPILER			= c++
 
@@ -37,7 +39,7 @@ $(NAME):			$(OBJS)
 					@echo "$(BLUE)Compiled $(NAME) successfully$(RESET)"
 
 %.o:	 			%.cpp
-					@$(COMPILER) $(CFLAGS) -c $< -o $@
+					@$(COMPILER) $(CFLAGS) -c $< -o $@ $(HEADERS)
 					@echo "$(GREEN)Compiled$(RESET) $(notdir $<)"
 
 clean:

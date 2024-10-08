@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:57:31 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/12 15:15:32 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/07 21:37:50 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # define GREEN	"\033[1;92m"
 # define YELLOW	"\033[1;93m"
 # define COLOR	"\033[1;94m"
-# define HEADER	"\033[0;104m"
 # define LINE	"\033[0;53m"
 # define RESET	"\033[0;m"
 
@@ -48,7 +47,7 @@ class	PhoneBook
 		void	_addNickname();
 		void	_addPhoneNumber();
 		void	_addDarkestSecret();
-		void	_setWFill(unsigned long width, char fill, std::string str);
+		void	_setWFill(size_t width, char fill, std::string str);
 		bool	_displayContacts();
 
 	public:

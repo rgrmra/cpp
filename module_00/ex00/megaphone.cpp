@@ -6,12 +6,13 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#            */
-/*   Updated: 2024/10/07 18:59:07 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/07 19:04:51 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <iostream>
+#include <string>
 
 int	main(int argc, char **argv)
 {
