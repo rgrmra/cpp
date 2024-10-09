@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 19:45:11 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/08 17:47:30 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/09 18:22:16 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-Account::Account(int initial_deposit)
+Account::Account(int initial_deposit) :
+	_nbDeposits(0),
+	_nbWithdrawals(0)
 {
 	_nbAccounts++;
 	_amount = initial_deposit;
