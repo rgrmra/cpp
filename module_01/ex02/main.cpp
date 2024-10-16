@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 21:57:25 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/11 22:11:46 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/14 16:19:56 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,39 @@
 
 int	main(void)
 {
-	std::string	string("HI THIS IS BRAIN");
-	std::string *pointer = &string;
-	std::string &reference = string;
+	const std::string stringVAR("HI THIS IS BRAIN");
+	const std::string* stringPTR = &stringVAR;
+	const std::string& stringREF = stringVAR;
 
 	std::cout
-		<< "Memory address of the string variable "
-		<< &string
-		<< std::endl;
-	std::cout
-		<< "Memory address held by string pointer "
-		<< pointer
-		<< std::endl;
-	std::cout
-		<< "Memory address held by string reference "
-		<< &reference
+		<< "The memory address of the string variable "
+		<< &stringVAR
 		<< std::endl;
 
 	std::cout
-		<< "Value of the string variable "
-		<< string
-		<< std::endl;
-	std::cout
-		<< "Value pointed to string pointer "
-		<< *pointer
-		<< std::endl;
-	std::cout
-		<< "Value pointed to string reference "
-		<< reference
+		<< "The memory address held by stringPTR "
+		<< &stringPTR
 		<< std::endl;
 
-	return (EXIT_SUCCESS);
+	std::cout
+		<< "The memory address held by stringREF "
+		<< &stringREF
+		<< std::endl;
+
+	std::cout
+		<< "The value of the string variable "
+		<< stringVAR
+		<< std::endl;
+
+	std::cout
+		<< "The value pointed to by stringPTR "
+		<< *stringPTR
+		<< std::endl;
+
+	std::cout
+		<< "The value pointed to by stringREF "
+		<< stringREF
+		<< std::endl;
+
+	return EXIT_SUCCESS;
 }
