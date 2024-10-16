@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 20:22:53 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/12 23:00:35 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/16 16:18:14 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <iostream>
 #include <string>
 
-Zombie::Zombie(std::string name) : _name(name)
+Zombie::Zombie(void) :
+	_name("unknown")
 {
 
 }
@@ -23,11 +24,11 @@ Zombie::~Zombie(void)
 {
 	std::cout
 		<< _name
-		<< " was destroyed!"
+		<< " was eliminated!"
 		<< std::endl;
 }
 
-void	Zombie::announce(void)
+void Zombie::announce(void)
 {
 	std::cout
 		<< _name
@@ -35,14 +36,25 @@ void	Zombie::announce(void)
 		<< std::endl;
 }
 
-Zombie	*newZombie(std::string name)
+void Zombie::set_name(std::string name)
 {
-	return new Zombie(name);
+	_name = name;
 }
 
-void	randomChump(std::string name)
+Zombie *newZombie(std::string name)
 {
-	Zombie zombie(name);
+	Zombie* zombie = new Zombie();
+
+	zombie->set_name(name);
+
+	return zombie;
+}
+
+void randomChump(std::string name)
+{
+	Zombie zombie;
+
+	zombie.set_name(name);
 
 	zombie.announce();
 }
