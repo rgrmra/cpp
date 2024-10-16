@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 20:23:17 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/08 17:12:28 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/09 12:39:19 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main(void)
 	{
 		std::cout
 			<< COLOR "PhoneBook valid commands" RESET << std::endl
-			<< COLOR "ADD: " RESET "add new contact" << std::endl
-			<< COLOR "SEARCH :" RESET "search a contact" << std::endl
-			<< COLOR "EXIT: " RESET "quits PhoneBook"
+			<< COLOR "ADD: " RESET "add a new contact" << std::endl
+			<< COLOR "SEARCH: " RESET "display a specific contact" << std::endl
+			<< COLOR "EXIT: " RESET "quits the phoneBook"
 			<< std::endl << std::endl;
 
 		input = prompt.get_line(COLOR "Command: \033[0;m");
