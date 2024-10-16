@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 20:22:53 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/11 21:44:00 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/14 20:27:21 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <iostream>
 #include <string>
 
-Zombie::Zombie(void)
+Zombie::Zombie(void) :
+	_name("unknown")
 {
 
 }
@@ -23,16 +24,16 @@ Zombie::~Zombie(void)
 {
 	std::cout
 		<< _name
-		<< " was destroyed!"
+		<< " was eliminated!"
 		<< std::endl;
 }
 
-void	Zombie::setName(std::string name)
+void Zombie::set_name(std::string name)
 {
 	_name = name;
 }
 
-void	Zombie::announce(void)
+void Zombie::announce(void)
 {
 	std::cout
 		<< _name
@@ -40,10 +41,12 @@ void	Zombie::announce(void)
 		<< std::endl;
 }
 
-Zombie	*zombieHorde(int N, std::string name)
+Zombie *zombieHorde(int N, std::string name)
 {
-	Zombie *horde = new Zombie[N];
+	Zombie* horde = new Zombie[N];
+
 	for (int i = 0; i < N; i++)
-		horde[i].setName(name);
-	return horde;	
+		horde[i].set_name(name);
+
+	return horde;
 }
