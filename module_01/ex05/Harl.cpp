@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:15:03 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/17 22:40:47 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/17 14:17:13 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Harl::~Harl()
 
 }
 
-void	Harl::debug(void)
+void Harl::debug(void)
 {
 	std::cout
 		<< PURPLE "[ DEBUG ] " RESET
@@ -40,7 +40,7 @@ void	Harl::debug(void)
 		<< std::endl;
 }
 
-void	Harl::info(void)
+void Harl::info(void)
 {
 	std::cout
 		<< BLUE "[ INFO ] " RESET
@@ -52,7 +52,7 @@ void	Harl::info(void)
 		<< std::endl;
 }
 
-void	Harl::warning(void)
+void Harl::warning(void)
 {
 	std::cout
 		<< YELLOW "[ WARNING ] " RESET
@@ -64,7 +64,7 @@ void	Harl::warning(void)
 		<< std::endl;
 }
 
-void	Harl::error(void)
+void Harl::error(void)
 {
 	std::cout
 		<< RED "[ ERROR ] " RESET
@@ -74,12 +74,26 @@ void	Harl::error(void)
 		<< std::endl;
 }
 
-void	Harl::complain(std::string level)
+void Harl::invalid(void)
 {
-	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::cout
+		<< GREEN "[ Probably complaining about insignificant problems ]" RESET
+		<< std::endl
+		<< std::endl;
+}
 
-	for (int i = 0; i < 4; ++i) {
-		if (!level.compare(levels[i]))
-			(this->*methods[i])();
+void Harl::complain(std::string level)
+{
+	const std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (level.compare(levels[i]) != 0)
+			continue;
+
+		(this->*methods[i])();
+		return ;
 	}
+
+	invalid();
 }
