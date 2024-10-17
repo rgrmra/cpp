@@ -6,13 +6,12 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:15:03 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/17 14:17:13 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/17 14:27:10 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 #include <iostream>
-#include <ostream>
 #include <string>
 
 Harl::Harl()
@@ -21,6 +20,7 @@ Harl::Harl()
 	methods[1] = &Harl::info;
 	methods[2] = &Harl::warning;
 	methods[3] = &Harl::error;
+	methods[4] = &Harl::invalid;
 }
 
 Harl::~Harl()
@@ -85,15 +85,14 @@ void Harl::invalid(void)
 void Harl::complain(std::string level)
 {
 	const std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-	for (int i = 0; i < 4; i++)
+	
+	int i;
+	for (i = 0; i < 4; i++)
 	{
 		if (level.compare(levels[i]) != 0)
 			continue;
-
-		(this->*methods[i])();
-		return ;
+		break;
 	}
 
-	invalid();
+	(this->*methods[i])();
 }

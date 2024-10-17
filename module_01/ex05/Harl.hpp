@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:08:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/17 12:39:00 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/17 14:24:20 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Harl
 		void invalid(void);
 
 		typedef void (Harl::*method)();
-  		method methods[4];
+  		method methods[5];
 };
 
 #endif /* HARL_HPP */

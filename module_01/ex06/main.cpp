@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:51:37 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/24 17:13:27 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/17 14:30:29 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		return EXIT_FAILURE;
-	harl.complain(argv[1]);
+
+	harl.complain(static_cast<std::string>(argv[1]));
 
 	return EXIT_SUCCESS;
 }

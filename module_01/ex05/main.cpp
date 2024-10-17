@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:51:37 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/17 14:18:23 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/17 14:29:55 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 #include <string>
 
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	Harl harl;
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
-	harl.complain("DEBU");
+	if (argc != 2)
+		return EXIT_FAILURE;
+
+	harl.complain(static_cast<std::string>(argv[1]));
 
 	return EXIT_SUCCESS;
 }

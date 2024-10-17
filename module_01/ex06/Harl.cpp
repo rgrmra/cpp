@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:15:03 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/24 17:53:32 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/17 14:31:23 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Harl::Harl()
 	methods[1] = &Harl::info;
 	methods[2] = &Harl::warning;
 	methods[3] = &Harl::error;
-	methods[4] = &Harl::wrong;
+	methods[4] = &Harl::invalid;
 }
 
 Harl::~Harl()
@@ -29,7 +29,7 @@ Harl::~Harl()
 
 }
 
-void	Harl::debug(void)
+void Harl::debug(void)
 {
 	std::cout
 		<< PURPLE "[ DEBUG ] " RESET
@@ -41,7 +41,7 @@ void	Harl::debug(void)
 		<< std::endl;
 }
 
-void	Harl::info(void)
+void Harl::info(void)
 {
 	std::cout
 		<< BLUE "[ INFO ] " RESET
@@ -52,7 +52,7 @@ void	Harl::info(void)
 		<< std::endl;
 }
 
-void	Harl::warning(void)
+void Harl::warning(void)
 {
 	std::cout
 		<< YELLOW "[ WARNING ] " RESET
@@ -64,7 +64,7 @@ void	Harl::warning(void)
 		<< std::endl;
 }
 
-void	Harl::error(void)
+void Harl::error(void)
 {
 	std::cout
 		<< RED "[ ERROR ] " RESET
@@ -74,7 +74,7 @@ void	Harl::error(void)
 		<< std::endl;
 }
 
-void	Harl::wrong(void)
+void Harl::invalid(void)
 {
 	std::cout
 		<< GREEN "[ Probably complaining about insignificant problems ]" RESET
@@ -82,13 +82,13 @@ void	Harl::wrong(void)
 		<< std::endl;
 }
 
-void	Harl::complain(std::string level)
+void Harl::complain(std::string level)
 {
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int i;
 
-	for (i = 0; i < 4; ++i)
-		if (!level.compare(levels[i]))
+	for (i = 0; i < 4; i++)
+		if (level.compare(levels[i]) == 0)
 			break;
 
 	switch (i)

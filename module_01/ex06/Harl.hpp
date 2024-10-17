@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:08:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/07/24 17:29:22 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/17 14:19:50 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ class Harl
 	public:
 		Harl(void);
 		~Harl(void);
-		void	complain(std::string level);
+		void complain(std::string level);
 	
 	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
-		void	wrong(void);
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+		void invalid(void);
 
 		typedef void (Harl::*method)();
   		method methods[5];
 };
 
-#endif
+#endif /* HARL_HPP */
