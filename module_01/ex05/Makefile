@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/10/17 11:54:17 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/10/17 14:58:27 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ HEADERS				= -I ./
 
 COMPILER			= c++
 
-CFLAGS				= -Wall -Wextra -Werror -std=c++98 -g3
+CFLAGS				= -Wall -Wextra -Werror -std=c++98
 
 all: 				$(NAME)
 

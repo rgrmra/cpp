@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 17:29:00 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/16 17:40:38 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/10/17 14:47:51 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 File::File(std::string filename) :
 	_infile(filename)
 {
-	_outfile = _infile + ".replace";
+	_outfile = filename + ".replace";
 }
 
 File::~File(void)
