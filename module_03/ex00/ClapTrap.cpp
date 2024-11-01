@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:03:36 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/31 17:37:54 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/01 11:01:42 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,9 +170,6 @@ void ClapTrap::attack(const std::string &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (not has_hit_points())
-		return ;
-
-	if (not has_energy_points())
 		return ;
 
 	std::cout
