@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:15:13 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 10:57:24 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/01 11:13:22 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,45 +70,6 @@ ScavTrap::~ScavTrap(void)
 	std::cout
 		<< "ScavTrap destructor called"
 		<< std::endl;
-}
-
-bool ScavTrap::has_hit_points(void) const
-{
-	if (_hit_points)
-		return true;
-
-	std::cout
-		<< "ScavTrap " << _name
-		<< " is dead!"
-		<< std::endl;
-
-	return false;
-}
-
-bool ScavTrap::has_energy_points(void) const
-{
-	if (_energy_points)
-		return true;
-
-	std::cout
-		<< "ScavTrap " << _name
-		<< " has no energy points!"
-		<< std::endl;
-
-	return false;
-}
-
-bool ScavTrap::has_attack_damage(void) const
-{
-	if (_attack_damage)
-		return true;
-
-	std::cout
-		<< "ScavTrap " << _name
-		<< " has no attack damage!"
-		<< std::endl;
-
-	return false;
 }
 
 void ScavTrap::attack(const std::string &target)
