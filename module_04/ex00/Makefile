@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/11/01 21:42:16 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/11/02 10:19:21 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ BLUE				= $(shell tput setaf 4)
 MAGENT				= $(shell tput setaf 5)
 RESET				= $(shell tput sgr0)
 
-NAME				= trap
+NAME				= animal
 
 FILES				= Animal.cpp \
 					  Dog.cpp \
