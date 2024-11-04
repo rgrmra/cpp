@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 19:24:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/04 14:13:06 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/04 19:23:11 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Fixed& Fixed::operator=(const Fixed &fixed)
 	if (this == &fixed)
 		return *this;
 
-	_value = fixed._value;
+	_value = fixed.getRawBits();
 
 	return *this;
 }
@@ -71,7 +71,7 @@ Fixed::~Fixed(void)
 int Fixed::getRawBits(void) const
 {
 	std::cout
-		<< "getRawBits function called"
+		<< "getRawBits member function called"
 		<< std::endl;
 
 	return _value;
@@ -80,7 +80,7 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
 	std::cout
-		<< "setRawBits function called"
+		<< "setRawBits member function called"
 		<< std::endl;
 
 	_value = raw;
