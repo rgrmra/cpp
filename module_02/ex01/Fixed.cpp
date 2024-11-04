@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 19:24:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/04 12:27:08 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/04 12:54:52 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 	if (this == &rhs)
 		return *this;
 
-	_value = rhs.getRawBits();
+	_value = rhs._value;
 
 	return *this;
 }
