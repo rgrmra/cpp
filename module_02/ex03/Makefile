@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/11/04 19:41:32 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/11/05 17:43:26 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ COMPILER			= c++
 CFLAGS				= -Wall -Wextra -Werror -std=c++98
 
 
-ifdef 				LOGGER
+ifdef 				LOG
 					LOGGER = -D LOGGER=false
 endif
 
@@ -44,11 +44,11 @@ $(NAME):			$(OBJS)
 					@echo "$(BLUE)Compiled $(NAME) successfully$(RESET)"
 
 %.o: 				%.cpp
-					@$(COMPILER) $(CFLAGS) -c $< -o $@ $(HEADERS) -D LOGGER=false
+					@$(COMPILER) $(CFLAGS) -c $< -o $@ $(HEADERS) $(LOGGER)
 					@echo "$(GREEN)Compiled$(RESET) $(notdir $<)"
 
 logger:
-					@make LOGGER=false --no-print-directory
+					@make LOG=false --no-print-directory
 
 clean:
 					@echo "$(RED)Removing$(RESET) $(NAME) objects"
