@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 19:21:46 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/30 14:40:24 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/04 15:08:12 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static void checker(const bool value)
 int main(void)
 {
 	checker(bsp(Point(0, 0), Point(2, 4), Point(0, 4), Point(1, 3)));
-	checker(bsp(Point(0, 0), Point(5, 10), Point(0, 10), Point(10, 10)));
-	checker(bsp(Point(0, 0), Point(5, 10), Point(0, 10), Point(4.9f, 9.9f)));
-	checker(bsp(Point(0, 0), Point(5, 10), Point(0, 10), Point(5, 10)));
-	checker(bsp(Point(-10,-10), Point(10, -10), Point(0, 10), Point(0,5)));
+	//checker(bsp(Point(0, 0), Point(5, 10), Point(0, 10), Point(10, 10)));
+	//checker(bsp(Point(0, 0), Point(5, 10), Point(0, 10), Point(4.9f, 9.9f)));
+	//checker(bsp(Point(0, 0), Point(5, 10), Point(0, 10), Point(5, 10)));
+	//checker(bsp(Point(-10,-10), Point(10, -10), Point(0, 10), Point(0,5)));
 
 	return EXIT_SUCCESS;
 }

@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:45:32 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/30 14:15:21 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/04 15:11:56 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static Point calculate_vector(Point a, Point b)
 	return Point(b.getX() - a.getX(), b.getY() - a.getY());
 }
 
-static double calculate_product(Point u, Point v)
+static double calculate_product(Point &u, Point &v)
 {
 	return u.getX() * v.getY() - u.getY() * v.getX();
 }
