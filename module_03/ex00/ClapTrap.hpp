@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:49:21 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/31 17:41:38 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 19:30:00 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #include <string>
 
+#define CLAPTRAP_HIT_POINTS 10
+#define CLAPTRAP_ENERGY_POINTS 10
+#define CLAPTRAP_ATTACK_DAMAGE 0
+
 class ClapTrap
 {
 	private:
@@ -22,25 +26,16 @@ class ClapTrap
 		unsigned int _hit_points;
 		unsigned int _energy_points;
 		unsigned int _attack_damage;
+		
+		ClapTrap(void);
+
+		void log(const std::string str) const;
 
 	public:
-		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &claptrap);
 		ClapTrap &operator=(const ClapTrap &claptrap);
 		~ClapTrap(void);
-
-		void set_name(std::string name);
-		std::string get_name(void) const;
-		void set_hit_points(unsigned int hit_points);
-		unsigned int get_hit_points(void) const;
-		bool has_hit_points(void) const;
-		void set_energy_points(unsigned int energy_points);
-		unsigned int get_energy_points(void) const;
-		bool has_energy_points(void) const;
-		void set_attack_damage(unsigned int attack_damage);
-		unsigned int get_attack_damage(void) const;
-		bool has_attack_damage(void) const;
 
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
