@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:15:13 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 11:13:22 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 18:50:57 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ ScavTrap::ScavTrap(void) :
 		<< "ScavTrap default constructor called"
 		<< std::endl;
 
-	set_hit_points(100);
-	set_energy_points(50);
-	set_attack_damage(20);
+	_hit_points = SCAVTRAP_HIT_POINTS;
+	_energy_points = SCAVTRAP_ENERGY_POINTS;
+	_attack_damage = SCAVTRAP_ATTACK_DAMAGE;
 }
 
 ScavTrap::ScavTrap(std::string name) :
@@ -33,9 +33,9 @@ ScavTrap::ScavTrap(std::string name) :
 		<< "ScavTrap default parameterized constructor called"
 		<< std::endl;
 
-	set_hit_points(100);
-	set_energy_points(50);
-	set_attack_damage(20);
+	_hit_points = SCAVTRAP_HIT_POINTS;
+	_energy_points = SCAVTRAP_ENERGY_POINTS;
+	_attack_damage = SCAVTRAP_ATTACK_DAMAGE;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &scavtrap) :
@@ -56,10 +56,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
 	
 	if (this != &scavtrap)
 	{
-		set_name(scavtrap.get_name());
-		set_hit_points(scavtrap.get_hit_points());
-		set_energy_points(scavtrap.get_energy_points());
-		set_attack_damage(scavtrap.get_attack_damage());
+		_name = scavtrap._name;
+		_hit_points = scavtrap._hit_points;
+		_energy_points = scavtrap._energy_points;
+		_attack_damage = scavtrap._attack_damage;
 	}
 
 	return *this;
@@ -74,14 +74,11 @@ ScavTrap::~ScavTrap(void)
 
 void ScavTrap::attack(const std::string &target)
 {
-	if (not has_hit_points())
-		return ;
+	if (not _hit_points)
+		return log("ScavTrap " + _name + " is dead!");
 
-	if (not has_energy_points())
-		return ;
-
-	if (not has_attack_damage())
-		return ;
+	if (not _energy_points)
+		return log("ScavTrap " + _name + " has no energy points!");
 
 	std::cout
 		<< "ScavTrap " << _name
@@ -94,6 +91,12 @@ void ScavTrap::attack(const std::string &target)
 
 void ScavTrap::guardGate(void)
 {
+	if (not _hit_points)
+		return log("guardGate: ScavTrap " + _name + " is dead!");
+	
+	if (not _energy_points)
+		return log("guardGate: ScavTrap " + _name + " has no energy!");
+
 	std::cout
 		<< "ScavTrap " << _name
 		<< " is now in Gate Keeper Mode."
