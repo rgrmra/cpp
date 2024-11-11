@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:15:41 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 12:48:51 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 19:26:49 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,17 @@
 #include "ClapTrap.hpp"
 #include <string>
 
-class FragTrap : public ClapTrap
+#define FRAGTRAP_HIT_POINTS 100
+#define FRAGTRAP_ENERGY_POINTS 100
+#define FRAGTRAP_ATTACK_DAMAGE 30
+
+class FragTrap :
+	public ClapTrap
 {
-	public:
+	protected:
 		FragTrap(void);
+
+	public:
 		FragTrap(const std::string name);
 		FragTrap(const FragTrap &fragtrap);
 		FragTrap &operator=(const FragTrap &fragtrap);
