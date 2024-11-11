@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 19:15:13 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 16:10:47 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 18:50:57 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,11 @@ ScavTrap::~ScavTrap(void)
 
 void ScavTrap::attack(const std::string &target)
 {
-	if (not has_hit_points("ScavTrap"))
-		return ;
+	if (not _hit_points)
+		return log("ScavTrap " + _name + " is dead!");
 
-	if (not has_energy_points("ScavTrap"))
-		return ;
-
-	if (not has_attack_damage("ScavTrap"))
-		return ;
+	if (not _energy_points)
+		return log("ScavTrap " + _name + " has no energy points!");
 
 	std::cout
 		<< "ScavTrap " << _name
@@ -94,11 +91,11 @@ void ScavTrap::attack(const std::string &target)
 
 void ScavTrap::guardGate(void)
 {
-	if (not has_hit_points("ScavTrap"))
-		return ;
-
-	if (not has_energy_points("ScavTrap"))
-		return ;
+	if (not _hit_points)
+		return log("guardGate: ScavTrap " + _name + " is dead!");
+	
+	if (not _energy_points)
+		return log("guardGate: ScavTrap " + _name + " has no energy!");
 
 	std::cout
 		<< "ScavTrap " << _name

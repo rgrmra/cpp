@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:15:41 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 15:34:14 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 19:18:29 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@
 class FragTrap :
 	virtual public ClapTrap
 {
-	public:
+	protected:
 		FragTrap(void);
+
+	public:
 		FragTrap(const std::string name);
 		FragTrap(const FragTrap &fragtrap);
 		FragTrap &operator=(const FragTrap &fragtrap);
