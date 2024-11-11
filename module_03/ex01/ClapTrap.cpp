@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:03:36 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/11 19:16:08 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 19:42:22 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(void) :
 	_attack_damage(CLAPTRAP_ATTACK_DAMAGE)
 {
 	std::cout
-		<< "Default constructor called"
+		<< "ClapTrap default constructor called"
 		<< std::endl;
 }
 
@@ -31,14 +31,14 @@ ClapTrap::ClapTrap(std::string name) :
 	_attack_damage(CLAPTRAP_ATTACK_DAMAGE)
 {
 	std::cout
-		<< "Default parameterized constructor called"
+		<< "ClapTrap default parameterized constructor called"
 		<< std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
 	std::cout
-		<< "Copy constructor called"
+		<< "ClapTrap copy constructor called"
 		<< std::endl;
 
 	*this = claptrap;
@@ -47,7 +47,7 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap)
 ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 {
 	std::cout
-		<< "Copy assignment operator called"
+		<< "ClapTrap copy assignment operator called"
 		<< std::endl;
 
 	if (this != &claptrap)
@@ -64,7 +64,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 ClapTrap::~ClapTrap(void)
 {
 	std::cout
-		<< "Destructor called"
+		<< "ClapTrap destructor called"
 		<< std::endl;
 }
 
