@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/11/02 21:08:55 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/11/12 19:52:01 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ NAME				= interface
 FILES				= Character.cpp \
 					  Cure.cpp \
 					  Ice.cpp \
+					  Fire.cpp \
 					  MateriaSource.cpp \
 					  AMateria.cpp \
 					  main.cpp

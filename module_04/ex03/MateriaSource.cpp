@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:15:01 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/02 19:42:58 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 20:20:32 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ MateriaSource::~MateriaSource(void)
 
 void MateriaSource::learnMateria(AMateria *m)
 {
-	for (size_t i = 0; i < MATERIASOURCE_INVENTORY_SIZE; i++)
+	size_t i;
+	for (i = 0; i < MATERIASOURCE_INVENTORY_SIZE; i++)
 	{
 		if (_inventory[i])
 			continue ;
