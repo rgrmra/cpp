@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:31:55 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/02 11:17:47 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 09:35:29 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@ Brain &Brain::operator=(const Brain &brain)
 		<< "Brain copy assignment operator called"
 		<< std::endl;
 	
-	if (this != &brain)
-		for (size_t i = 0; i < BRAIN_SIZE_IDEAS; i++)
-			_ideas[i] = brain._ideas[i];
+	if (this == &brain)
+		return *this;
+
+	for (size_t i = 0; i < BRAIN_SIZE_IDEAS; i++)
+		_ideas[i] = brain._ideas[i];
 
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 21:18:31 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/02 10:39:50 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 09:36:21 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &wronganimal)
 		<< "WrongAnimal copy assignment operator called"
 		<< std::endl;
 
-	if (this != &wronganimal)
-		_type = wronganimal._type;
+	if (this == &wronganimal)
+		return *this;
+
+	_type = wronganimal._type;
 
 	return *this;
 }

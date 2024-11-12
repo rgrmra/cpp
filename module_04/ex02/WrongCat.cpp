@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 21:28:11 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/02 10:40:04 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 09:36:39 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ WrongCat &WrongCat::operator=(const WrongCat &wrongcat)
 		<< "WrongCat copy assignment operator called"
 		<< std::endl;
 
-	if (this != &wrongcat)
-		_type = wrongcat._type;
+	if (this == &wrongcat)
+		return *this;
+
+	_type = wrongcat._type;
 
 	return *this;
 }
