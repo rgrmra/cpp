@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:15:41 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/11 19:26:49 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 21:36:10 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 class FragTrap :
 	public ClapTrap
 {
-	protected:
+	private:
 		FragTrap(void);
 
 	public:
