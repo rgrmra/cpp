@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:10:12 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/02 15:22:37 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 20:23:47 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,20 @@
 
 int main(void)
 {
-	std::cout << "\nClass Dog and Cat tests\n" << std::endl;
+	std::cout << "CLASS DOG TESTS" << std::endl;
 	
 	const Animal *dog = new Dog();
 	std::cout << dog->get_type() << std::endl;
 	dog->makeSound();
 	delete dog;
 	
+	std::cout << "\nCLASS CAT TESTS" << std::endl;
 	const Animal *cat = new Cat();
 	std::cout << cat->get_type() << std::endl;
 	cat->makeSound();
 	delete cat;
 
-	std::cout << std::endl;
-  	std::cout << "Subject tests" << std::endl;
-
+	std::cout << "\nSUBJECT TESTS" << std::endl;
     const int ARRAY_SIZE = 4;
     Animal *animals[ARRAY_SIZE];
 
@@ -53,7 +52,7 @@ int main(void)
 	}
 
     std::cout << std::endl;
-	std::cout << "Deep copy test" << std::endl;
+	std::cout << "DEEP COPY TESTS" << std::endl;
 
     Dog basic;
 	{
