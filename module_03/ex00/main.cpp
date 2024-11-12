@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:39:28 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/31 16:07:25 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/07 19:11:52 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,26 @@
 
 int main(void)
 {
-	ClapTrap claptrap("Marvin");
-	
-	std::cout << "Messages tests" << std::endl;
-	claptrap.attack("You");
-	claptrap.set_attack_damage(2);
-	claptrap.attack("");
-	claptrap.takeDamage(1);
-	claptrap.beRepaired(1);
-	
-	std::cout << std::endl;
-	std::cout << "Health Points tests" << std::endl;
-	
-	claptrap.takeDamage(1);
-	claptrap.beRepaired(2);
-	claptrap.takeDamage(10);
-	claptrap.takeDamage(1);
-	
-	std::cout << std::endl;
-	std::cout << "Energy tests" << std::endl;
-	
-	claptrap.set_energy_points(0);
-	claptrap.set_hit_points(10);
-	
-	claptrap.attack("You again");
-	claptrap.beRepaired(1);
-	claptrap.attack("A ghost");
+	ClapTrap *cadet = new ClapTrap("Cadet");
+
+	cadet->attack("Moulinette");
+	cadet->takeDamage(9);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->beRepaired(1);
+	cadet->attack("Moulinette");
+	cadet->takeDamage(10);
+	cadet->attack("Moulinette");
+	cadet->beRepaired(10);
+
+	delete cadet;
 	
 	return EXIT_SUCCESS;
 }

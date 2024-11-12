@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 13:17:59 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 16:22:42 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 19:21:39 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ DiamondTrap::~DiamondTrap(void)
 void DiamondTrap::whoAmI(void)
 {
 	std::cout
-		<< "I'm " << _name
+		<< "DiamondTrap: I'm " << _name
 		<< " and ClapTrap is " << ClapTrap::_name
 		<< std::endl;
 }

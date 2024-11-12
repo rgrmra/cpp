@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:22:20 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 16:08:00 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 18:51:32 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,11 @@ FragTrap::~FragTrap(void)
 
 void FragTrap::attack(const std::string &target)
 {
-	if (not has_hit_points("FragTrap"))
-		return ;
+	if (not _hit_points)
+		return log("attack: FragTrap " + _name + " is dead!");
 
-	if (not has_energy_points("FragTrap"))
-		return ;
-
-	if (not has_attack_damage("FragTrap"))
-		return ;
+	if (not _energy_points)
+		return log("attack: FragTrap " + _name + " has no energy!");
 
 	std::cout
 		<< "FragTrap " << _name
@@ -97,11 +94,11 @@ void FragTrap::attack(const std::string &target)
 
 void FragTrap::highFivesGuys(void)
 {
-	if (not has_hit_points("FragTrap"))
-		return ;
+	if (not _hit_points)
+		return log("highFivesGuys: FragTrap " + _name + " is dead!");
 
-	if (not has_energy_points("FragTrap"))
-		return ;
+	if (not _energy_points)
+		return log("highFivesGuys: FragTrap " + _name + " has no energy!");
 
 	std::cout
 		<< "FragTrap raises his hand for a high-five!"

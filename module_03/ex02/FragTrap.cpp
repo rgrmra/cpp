@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:22:20 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 13:06:01 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 18:51:32 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ FragTrap::FragTrap(void) :
 		<< "FragTrap default constructor called"
 		<< std::endl;
 
-	set_hit_points(100);
-	set_energy_points(100);
-	set_attack_damage(30);
+	_hit_points = FRAGTRAP_HIT_POINTS;
+	_energy_points = FRAGTRAP_ENERGY_POINTS;
+	_attack_damage = FRAGTRAP_ATTACK_DAMAGE;
 }
 
 FragTrap::FragTrap(const std::string name) :
@@ -34,9 +34,9 @@ FragTrap::FragTrap(const std::string name) :
 		<< "FragTrap default parameterized constructor called"
 		<< std:: endl;
 
-	set_hit_points(100);
-	set_energy_points(100);
-	set_attack_damage(30);
+	_hit_points = FRAGTRAP_HIT_POINTS;
+	_energy_points = FRAGTRAP_ENERGY_POINTS;
+	_attack_damage = FRAGTRAP_ATTACK_DAMAGE;
 }
 
 FragTrap::FragTrap(const FragTrap &fragtrap) :
@@ -59,10 +59,10 @@ FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 
 	if (this != &fragtrap)
 	{
-		set_name(fragtrap.get_name());
-		set_hit_points(fragtrap.get_hit_points());
-		set_energy_points(fragtrap.get_energy_points());
-		set_attack_damage(fragtrap.get_attack_damage());
+		_name = fragtrap._name;
+		_hit_points = fragtrap._hit_points;
+		_energy_points = fragtrap._energy_points;
+		_attack_damage = fragtrap._attack_damage;
 	}
 
 	return *this;
@@ -77,14 +77,11 @@ FragTrap::~FragTrap(void)
 
 void FragTrap::attack(const std::string &target)
 {
-	if (not has_hit_points("FragTrap"))
-		return ;
+	if (not _hit_points)
+		return log("attack: FragTrap " + _name + " is dead!");
 
-	if (not has_energy_points("FragTrap"))
-		return ;
-
-	if (not has_attack_damage("FragTrap"))
-		return ;
+	if (not _energy_points)
+		return log("attack: FragTrap " + _name + " has no energy!");
 
 	std::cout
 		<< "FragTrap " << _name
@@ -97,11 +94,11 @@ void FragTrap::attack(const std::string &target)
 
 void FragTrap::highFivesGuys(void)
 {
-	if (not has_hit_points("FragTrap"))
-		return ;
+	if (not _hit_points)
+		return log("highFivesGuys: FragTrap " + _name + " is dead!");
 
-	if (not has_energy_points("FragTrap"))
-		return ;
+	if (not _energy_points)
+		return log("highFivesGuys: FragTrap " + _name + " has no energy!");
 
 	std::cout
 		<< "FragTrap raises his hand for a high-five!"

@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#            */
-/*   Updated: 2024/11/04 18:41:16 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 19:33:24 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 
 	std::string str;
-	for (size_t i = 1; i < argc; i++)
+	for (size_t i = 1; i < static_cast<size_t>(argc); i++)
 	{
 		str = argv[i];
 
