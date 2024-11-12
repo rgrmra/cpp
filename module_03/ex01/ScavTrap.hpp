@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:10:30 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/11 19:26:58 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/11 21:37:15 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 class ScavTrap :
 	public ClapTrap
 {
-	protected:
+	private:
 		ScavTrap(void);
 
 	public:
