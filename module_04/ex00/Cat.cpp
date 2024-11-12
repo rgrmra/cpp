@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:38:38 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 18:45:26 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 08:48:30 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ Cat &Cat::operator=(const Cat &cat)
 		<< "Cat copy assignment constructor called"
 		<< std::endl;
 
-	if (this != &cat)
-		_type = cat._type;
+	if (this == &cat)
+		return *this;
+
+	_type = cat._type;
 
 	return *this;
 }

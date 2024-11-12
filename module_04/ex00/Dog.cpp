@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:27:13 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/01 18:44:58 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 08:49:00 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ Dog &Dog::operator=(const Dog &dog)
 		<< "Dog copy assignment operator called"
 		<< std::endl;
 
-	if (this != &dog)
-		_type = dog._type;
+	if (this == &dog)
+		return *this;
+
+	_type = dog._type;
 
 	return *this;
 }
