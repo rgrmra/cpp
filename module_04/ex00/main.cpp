@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:10:12 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/12 09:01:57 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 09:05:04 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,21 @@ int main(void)
 
 	delete cat;
 
-	std::cout << "\nWRONGCAT CLASS TESTS:" << std::endl;
+	std::cout << "\nWRONGANIMAL CLASS TESTS:" << std::endl;
 	WrongAnimal *wronganimal = new WrongCat();
 
 	std::cout << wronganimal->get_type() << std::endl;
 	wronganimal->makeSound();
 
 	delete wronganimal;
+
+	std::cout << "\nWRONGCAT CLASS TESTS:" << std::endl;
+	WrongCat *wrongcat = new WrongCat();
+
+	std::cout << wrongcat->get_type() << std::endl;
+	wrongcat->makeSound();
+
+	delete wrongcat;
 
 	return EXIT_SUCCESS;
 }
