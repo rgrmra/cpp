@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:51:10 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/02 21:13:09 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 14:27:25 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ AMateria &AMateria::operator=(const AMateria &rhs)
 		<< "AMateria copy assignment operator called"
 		<< std::endl;
 
-	if (this != &rhs)
-		_type = rhs._type;
+	if (this == &rhs)
+		return *this;
+
+	_type = rhs._type;
 	
 	return *this;
 }
@@ -64,7 +66,7 @@ const std::string &AMateria::getType(void) const
 	return _type;;
 }
 
-void AMateria::use(ICharacter& target)
+void AMateria::use(ICharacter &target)
 {
 	std::cout
 		<< "Not in use yet for " << target.getName()

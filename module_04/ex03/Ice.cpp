@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:50:47 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/02 21:02:09 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 14:15:13 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ Ice &Ice::operator=(const Ice &ice)
 		<< "Ice copy assignment operator called"
 		<< std::endl;
 
-	if (this != &ice)
-	{
-		_type = ice._type;
-	}
+	if (this == &ice)
+		return *this;
+	
+	_type = ice._type;
 
 	return *this;
 }

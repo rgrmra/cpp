@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 16:08:59 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/02 16:13:57 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/12 14:15:57 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ Cure &Cure::operator=(const Cure &cure)
 		<< "Cure copy assignment operator called"
 		<< std::endl;
 
-	if (this != &cure)
-		_type = cure._type;
+	if (this == &cure)
+		return *this;
+
+	_type = cure._type;
 
 	return *this;
 }
