@@ -6,13 +6,20 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 23:13:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 02:41:28 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/16 10:07:53 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <ostream>
 #include <string>
+
+Bureaucrat::Bureaucrat(void)
+	: _name("unknow"),
+	  _grade(0) {
+
+	throw GradeTooHighException();
+}
 
 Bureaucrat::Bureaucrat(const std::string name, int grade)
 	: _name(name),
