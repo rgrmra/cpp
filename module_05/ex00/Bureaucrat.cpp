@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 23:13:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 10:07:53 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/16 11:04:54 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &bureaucrat) {
 
 Bureaucrat::~Bureaucrat(void) {}
 
-const std::string Bureaucrat::getName(void) const {
+std::string Bureaucrat::getName(void) const {
 	return _name;
 }
 

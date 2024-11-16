@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:56:12 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 10:03:06 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/16 11:04:37 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat {
 		Bureaucrat &operator=(const Bureaucrat &bureaucrat);
 		~Bureaucrat(void);
 
-		const std::string getName(void) const;
+		std::string getName(void) const;
 		int getGrade(void) const;
 
 		void incrementGrade(void);
