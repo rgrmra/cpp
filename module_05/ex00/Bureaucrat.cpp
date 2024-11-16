@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 23:13:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 01:06:49 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/16 02:41:28 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string>
 
 Bureaucrat::Bureaucrat(const std::string name, int grade)
-	: _name(new std::string(name)),
+	: _name(name),
 	  _grade(grade) {
 
 	if (_grade > _minGrade)
@@ -27,24 +27,25 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
 	: _name(bureaucrat._name),
-	  _grade(bureaucrat._grade) {}
+	  _grade(bureaucrat._grade) {
+
+	*this = bureaucrat;
+}
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &bureaucrat) {
 	
 	if (this == &bureaucrat)
 		return *this;
 
-	_name = new std::string(*bureaucrat._name);
+	_grade = bureaucrat._grade;
 
 	return *this;
 }
 
-Bureaucrat::~Bureaucrat(void) {
-	delete _name;
-}
+Bureaucrat::~Bureaucrat(void) {}
 
 const std::string Bureaucrat::getName(void) const {
-	return *_name;
+	return _name;
 }
 
 int Bureaucrat::getGrade(void) const {

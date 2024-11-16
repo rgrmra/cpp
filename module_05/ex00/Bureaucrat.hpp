@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:56:12 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 01:10:07 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/16 02:26:22 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Bureaucrat {
 	private:
 		static const int _maxGrade = 1;
 		static const int _minGrade = 150;
-		const std::string *_name;
+		const std::string _name;
 		int _grade;
 
 	public:
