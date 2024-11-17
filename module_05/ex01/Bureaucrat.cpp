@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 23:13:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 14:06:34 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/17 13:15:48 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void Bureaucrat::signForm(Form &form) {
 		form.beSigned(*this);
 		std::cout << _name << " signed " << form.getName() << std::endl;
 	} catch (std::exception &exception) {
-		std::cerr << exception.what() << std::endl;
+		std::cerr << _name << " couldn't sign " << form.getName()
+			<< " because " << exception.what() << std::endl;
 	}
 }
 

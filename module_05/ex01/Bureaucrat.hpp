@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:56:12 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 13:55:59 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/17 13:07:09 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,6 @@ class Bureaucrat {
 		const std::string _name;
 		int _grade;
 
-	protected:
-		class GradeTooHighException : public std::exception {
-			public:
-				virtual const char *what() const throw();
-		};
-
-		class GradeTooLowException : public std::exception {
-			public:
-				virtual const char *what() const throw();
-		};
 
 	public:
 		Bureaucrat(void);
@@ -50,6 +40,16 @@ class Bureaucrat {
 		void incrementGrade(void);
 		void decrementGrade(void);
 		void signForm(Form &form);
+
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
