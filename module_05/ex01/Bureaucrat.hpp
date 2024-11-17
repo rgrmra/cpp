@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:56:12 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 11:32:57 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/16 13:55:59 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <exception>
 #include <ostream>
 #include <string>
+
+class Form;
 
 class Bureaucrat {
 	private:
@@ -47,6 +49,7 @@ class Bureaucrat {
 
 		void incrementGrade(void);
 		void decrementGrade(void);
+		void signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);

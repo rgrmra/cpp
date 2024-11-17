@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/11/15 22:56:01 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/11/17 12:40:16 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ RESET				= $(shell tput sgr0)
 NAME				= bureaucrat
 
 FILES				= Bureaucrat.cpp \
+					  Form.cpp \
 					  main.cpp
 
 OBJS				= $(FILES:%.cpp=%.o)

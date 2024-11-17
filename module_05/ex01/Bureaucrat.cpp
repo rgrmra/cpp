@@ -6,11 +6,14 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 23:13:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 11:04:54 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/16 14:06:34 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include <exception>
+#include <iostream>
 #include <ostream>
 #include <string>
 
@@ -73,14 +76,24 @@ void Bureaucrat::decrementGrade(void) {
 	_grade++;
 }
 
+void Bureaucrat::signForm(Form &form) {
+	try {
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	} catch (std::exception &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+}
+
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too High";
+	return "Bureaucrat: Grade is too High";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade is too Low";
+	return "Bureaucrat: Grade is too Low";
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
-	return os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	return os << bureaucrat.getName()
+		<< ", bureaucrat grade " << bureaucrat.getGrade();
 }

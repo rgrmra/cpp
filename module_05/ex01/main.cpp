@@ -6,69 +6,58 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 01:05:47 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 11:17:52 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/17 12:59:13 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <cstdlib>
+#include <exception>
 #include <iostream>
+#include <ostream>
 
 int main(void)
 {
 	std::cout << "1ST TEST" << std::endl;
 	try {
-		Bureaucrat marvin("Marvin", 2);
-
-		std::cout << "Name: " << marvin.getName() << std::endl;
-		std::cout << "Grade: " << marvin.getGrade() << std::endl;
-		std::cout << marvin << std::endl;
-
-		marvin.incrementGrade();
-		std::cout << "Grade: " << marvin.getGrade() << std::endl;
-		marvin.incrementGrade();
-	 } catch (std::exception &exception) {
-		 std::cerr << exception.what() << std::endl;
-	 }
+		Form form = Form("Application Form", 0, 0);	
+	} catch (std::exception &exception) {
+		std::cerr << exception.what()<< std::endl;
+	}
 
 	std::cout << "\n2ND TEST" << std::endl;
 	try {
-		Bureaucrat cadet("Cadet", 149);
-		std::cout << "Name: " << cadet.getName() << std::endl;
-		std::cout << "Grade: " << cadet.getGrade() << std::endl;
-		std::cout << cadet << std::endl;
-
-		cadet.decrementGrade();
-		std::cout << "Grade: " << cadet.getGrade() << std::endl;
-		cadet.decrementGrade();
+		Form form = Form("Application Form", 151, 151);	
 	} catch (std::exception &exception) {
-		std::cerr << exception.what() << std::endl;
+		std::cerr << exception.what()<< std::endl;
 	}
 
 	std::cout << "\n3RD TEST" << std::endl;
 	try {
-		Bureaucrat high("High", 0);
-	} catch (std::exception &exception) {
-		std::cerr << exception.what() << std::endl;
-	}
+		Form form = Form("Application Form", 24, 24);	
+		std::cout << form << std::endl;
+
+		Bureaucrat manager = Bureaucrat("Manager", 25);
+		std::cout << manager << std::endl;
+
+		manager.signForm(form);
+	 } catch (std::exception &exception) {
+		 std::cerr << exception.what() << std::endl;
+	 }
 
 	std::cout << "\n4TH TEST" << std::endl;
 	try {
-		Bureaucrat low("Low", 151);
-	} catch (std::exception &exception) {
-		std::cerr << exception.what() << std::endl;
-	}
+		Form form = Form("Application Form", 10, 1);
+		std::cout << form << std::endl;
 
-	std::cout << "\n5TH TEST" << std::endl;
-	try {
-		Bureaucrat test("Bureaucrat", 10);
-		while (test.getGrade() > 0)
-		{
-			std::cout << test << std::endl;
-			test.incrementGrade();
-		}
-	}
-	catch (std::exception &exception) {
+		Bureaucrat boss = Bureaucrat("Boss", 1);
+		std::cout << boss << std::endl;
+
+		boss.signForm(form);
+
+		std::cout << form << std::endl;
+	} catch (std::exception &exception) {
 		std::cerr << exception.what() << std::endl;
 	}
 
