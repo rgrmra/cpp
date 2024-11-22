@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/11/22 17:46:42 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/11/22 17:32:50 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,14 @@ BLUE				= $(shell tput setaf 4)
 MAGENT				= $(shell tput setaf 5)
 RESET				= $(shell tput sgr0)
 
-NAME				= bureaucrat
+NAME				= intern
 
 FILES				= Bureaucrat.cpp \
 					  AForm.cpp \
 					  ShrubberyCreationForm.cpp \
 					  RobotomyRequestForm.cpp \
 					  PresidentialPardonForm.cpp \
+					  Intern.cpp \
 					  main.cpp
 
 OBJS				= $(FILES:%.cpp=%.o)
@@ -50,7 +51,7 @@ clean:
 
 fclean: 			clean
 					@echo "$(RED)Removing$(RESET) $(NAME)"
-					@rm -rf $(NAME) *_shrubbery
+					@rm -rf $(NAME)
 
 re:					fclean all
 
