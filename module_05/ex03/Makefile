@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/11/22 17:32:50 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/11/23 15:47:12 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ clean:
 
 fclean: 			clean
 					@echo "$(RED)Removing$(RESET) $(NAME)"
-					@rm -rf $(NAME)
+					@rm -rf $(NAME) *_shrubbery
 
 re:					fclean all
 

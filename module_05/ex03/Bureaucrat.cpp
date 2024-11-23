@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 23:13:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/20 20:33:33 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 15:49:06 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "AForm.hpp"
 #include <exception>
 #include <iostream>
-#include <ostream>
 #include <string>
 
 Bureaucrat::Bureaucrat(void)
@@ -28,10 +27,10 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
 	: _name(name),
 	  _grade(grade) {
 
-	if (_grade > _minGrade)
+	if (_grade > MIN_GRADE)
 		throw GradeTooLowException();
 
-	if (_grade < _maxGrade)
+	if (_grade < MAX_GRADE)
 		throw GradeTooHighException();
 }
 
@@ -63,14 +62,14 @@ int Bureaucrat::getGrade(void) const {
 }
 
 void Bureaucrat::incrementGrade(void) {
-	if (_grade == _maxGrade)
+	if (_grade == MAX_GRADE)
 		throw GradeTooHighException();
 
 	_grade--;
 }
 
 void Bureaucrat::decrementGrade(void) {
-	if (_grade == _minGrade)
+	if (_grade == MIN_GRADE)
 		throw GradeTooLowException();
 	
 	_grade++;
