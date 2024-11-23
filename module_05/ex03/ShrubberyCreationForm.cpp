@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:09:54 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/22 18:44:44 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 16:30:30 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,8 @@ const char *ShrubberyCreationForm::FileFailedToOpenException::what(void) const t
 	return "File failed to open";
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
+void ShrubberyCreationForm::executeTask(void) const {
 
-	AForm::execute(executor);
-	
 	static const std::string filename = _target + "_shrubbery";
 
 	std::ofstream fileOut(filename.c_str());

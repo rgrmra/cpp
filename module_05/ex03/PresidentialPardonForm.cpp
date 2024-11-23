@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 18:21:01 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/20 20:41:27 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 16:31:11 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,7 @@ PresidentialPardonForm::~PresidentialPardonForm(void) {
 
 }
 
-void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
-
-	AForm::execute(executor);
+void PresidentialPardonForm::executeTask(void) const {
 
 	std::cout << _target + " has been pardoned by Zaphod Beeblebrox." <<  std::endl;
 }

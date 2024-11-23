@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 11:34:55 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/20 20:38:41 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 16:29:15 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ void AForm::execute(const Bureaucrat &bureaucrat) const {
 
 	if (bureaucrat.getGrade() > this->_gradeToExecute)
 		throw GradeTooLowException();
+
+	this->executeTask();
 }
 
 const char *AForm::GradeTooHighException::what(void) const throw() {

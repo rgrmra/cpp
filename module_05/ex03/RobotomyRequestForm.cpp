@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 18:10:06 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/22 18:25:27 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 16:30:48 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,7 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {
 
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
-
-	AForm::execute(executor);
+void RobotomyRequestForm::executeTask(void) const {
 
 	std::cout << "Starting robotomization..." << std::endl;
 	if ((rand() % 100) % 2 == 0)

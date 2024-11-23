@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:51:24 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/19 18:03:46 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 16:30:03 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RobotomyRequestForm
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
 		~RobotomyRequestForm(void);
 
-		void execute(const Bureaucrat &executor) const;
+		void executeTask(void) const;
 };
 
 #endif /* ROBOTYREQUESTFORM_HPP */
