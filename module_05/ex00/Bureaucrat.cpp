@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 23:13:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/16 11:04:54 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 14:56:19 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 #include <string>
 
 Bureaucrat::Bureaucrat(void)
-	: _name("unknow"),
-	  _grade(0) {
+	: _name("unknow") {
 
-	throw GradeTooHighException();
+	throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade)
-	: _name(name),
-	  _grade(grade) {
+	: _name(name) {
 
-	if (_grade > _minGrade)
+	if (grade > MIN_GRADE)
 		throw GradeTooLowException();
 
-	if (_grade < _maxGrade)
+	if (grade < MAX_GRADE)
 		throw GradeTooHighException();
+
+	_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
@@ -60,14 +60,14 @@ int Bureaucrat::getGrade(void) const {
 }
 
 void Bureaucrat::incrementGrade(void) {
-	if (_grade == _maxGrade)
+	if (_grade == MAX_GRADE)
 		throw GradeTooHighException();
 
 	_grade--;
 }
 
 void Bureaucrat::decrementGrade(void) {
-	if (_grade == _minGrade)
+	if (_grade == MIN_GRADE)
 		throw GradeTooLowException();
 	
 	_grade++;
