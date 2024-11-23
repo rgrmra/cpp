@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 23:13:26 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/17 13:15:48 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 15:27:06 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 #include "Form.hpp"
 #include <exception>
 #include <iostream>
-#include <ostream>
 #include <string>
 
 Bureaucrat::Bureaucrat(void)
-	: _name("unknow"),
-	  _grade(0) {
+	: _name("unknow") {
 
-	throw GradeTooHighException();
+	throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade)
-	: _name(name),
-	  _grade(grade) {
+	: _name(name) {
 
-	if (_grade > _minGrade)
+	if (grade > MIN_GRADE)
 		throw GradeTooLowException();
 
-	if (_grade < _maxGrade)
+	if (grade < MAX_GRADE)
 		throw GradeTooHighException();
+
+	_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
@@ -63,14 +62,14 @@ int Bureaucrat::getGrade(void) const {
 }
 
 void Bureaucrat::incrementGrade(void) {
-	if (_grade == _maxGrade)
+	if (_grade == MAX_GRADE)
 		throw GradeTooHighException();
 
 	_grade--;
 }
 
 void Bureaucrat::decrementGrade(void) {
-	if (_grade == _minGrade)
+	if (_grade == MIN_GRADE)
 		throw GradeTooLowException();
 	
 	_grade++;
@@ -80,6 +79,7 @@ void Bureaucrat::signForm(Form &form) {
 	try {
 		form.beSigned(*this);
 		std::cout << _name << " signed " << form.getName() << std::endl;
+
 	} catch (std::exception &exception) {
 		std::cerr << _name << " couldn't sign " << form.getName()
 			<< " because " << exception.what() << std::endl;

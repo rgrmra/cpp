@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:56:12 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/17 13:07:09 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 15:21:42 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ class Form;
 
 class Bureaucrat {
 	private:
-		static const int _maxGrade = 1;
-		static const int _minGrade = 150;
+		static const int MAX_GRADE = 1;
+		static const int MIN_GRADE = 150;
 		const std::string _name;
 		int _grade;
-
 
 	public:
 		Bureaucrat(void);
@@ -39,6 +38,7 @@ class Bureaucrat {
 
 		void incrementGrade(void);
 		void decrementGrade(void);
+
 		void signForm(Form &form);
 
 		class GradeTooHighException : public std::exception {

@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 11:34:55 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/17 13:13:13 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/23 15:28:51 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
 	  _gradeToExecute(gradeToExecute),
 	  _signed(false) {
 
-	if (gradeToSign < _maxGrade || gradeToExecute < _maxGrade)
+	if (gradeToSign < MAX_GRADE || gradeToExecute < MAX_GRADE)
 		throw GradeTooHighException();
 
-	if (gradeToSign > _minGrade || gradeToExecute > _minGrade)
+	if (gradeToSign > MIN_GRADE || gradeToExecute > MIN_GRADE)
 		throw GradeTooLowException();
 }
 
