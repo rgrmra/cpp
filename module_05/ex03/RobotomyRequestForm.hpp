@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:51:24 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/23 16:30:03 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/24 14:36:48 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ class RobotomyRequestForm
 		static const int GRADE_TO_EXECUTE = 45;
 		std::string _target;
 
+	protected:
+		void executeTask(void) const;
+
 	public:
 		RobotomyRequestForm(void);
 		RobotomyRequestForm(const std::string targer);
 		RobotomyRequestForm(const RobotomyRequestForm &src);
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
 		~RobotomyRequestForm(void);
-
-		void executeTask(void) const;
 };
 
 #endif /* ROBOTYREQUESTFORM_HPP */
