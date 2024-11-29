@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 19:33:44 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/10/14 20:36:54 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/28 21:19:32 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 #include <string>
 
-class Zombie
-{
+class Zombie {
 	private:
 		std::string _name;
 

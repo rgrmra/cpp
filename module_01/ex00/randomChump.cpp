@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/11 20:22:53 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/28 21:18:09 by rde-mour         ###   ########.org.br   */
+/*   Created: 2024/11/28 21:16:45 by rde-mour          #+#    #+#             */
+/*   Updated: 2024/11/28 21:18:47 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 #include <string>
 
-Zombie::Zombie(void) :
-	_name("unknown") {
+void randomChump(std::string name) {
 
-}
+	Zombie zombie;
 
-Zombie::~Zombie(void) {
-	std::cout
-		<< _name
-		<< " was eliminated!"
-		<< std::endl;
-}
+	zombie.set_name(name);
 
-void Zombie::announce(void) {
-	std::cout
-		<< _name
-		<< ": BraiiiiiiinnnzzzZ..."
-		<< std::endl;
-}
-
-void Zombie::set_name(std::string name) {
-	_name = name;
+	zombie.announce();
 }
