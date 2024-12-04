@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 10:53:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/11/23 16:29:29 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/11/24 14:35:53 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ class AForm {
 		const int _gradeToExecute;
 		bool _signed;
 
+	protected:
+		virtual void executeTask(void) const = 0;
+
 	public:
 		AForm(void);
 		AForm(const std::string &name, int gradeToSign, int gradeToExecute);
@@ -44,7 +47,6 @@ class AForm {
 		void beSigned(Bureaucrat &bureaucrat);
 
 		void execute(const Bureaucrat &bureaucrat) const;
-		virtual void executeTask(void) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:
