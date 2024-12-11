@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:14:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/10 21:05:09 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/11 17:45:47 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <ostream>
 #include <sstream>
 #include <string>
 #include <sys/types.h>
@@ -42,7 +43,7 @@ ScalarConverter::~ScalarConverter(void) {
 
 }
 
-bool validatePseudoLiterals(std::string str) {
+static bool validatePseudoLiterals(std::string str) {
 	
 	static const std::string literals[] = {
 		"+inff", "inff", "-inff", "nanf",
@@ -57,7 +58,7 @@ bool validatePseudoLiterals(std::string str) {
 	return false;
 }
 
-bool validate(std::string &str, char *rest) {
+static bool validate(std::string &str, char *rest) {
 
 	if (validatePseudoLiterals(str) == true)
 		return true;
@@ -72,7 +73,7 @@ bool validate(std::string &str, char *rest) {
 	return true;
 }
 
-std::string convertToChar(std::string &str, double *nbr, char *c) {
+static std::string toChar(std::string &str, double *nbr, char *c) {
 
 	if (str.size() == 1 && std::isprint(str.at(0)) && not std::isdigit(str.at(0))) {
 		*nbr = *c = static_cast<char>(str.at(0));
@@ -90,7 +91,7 @@ std::string convertToChar(std::string &str, double *nbr, char *c) {
 	return "impossible";
 }
 
-std::string convertToInt(std::string &str, double *nbr, char *rest, char *c) {
+static std::string toInt(std::string &str, double *nbr, char *rest, char *c) {
 
 	std::stringstream ss;
 
@@ -104,7 +105,7 @@ std::string convertToInt(std::string &str, double *nbr, char *rest, char *c) {
 	return "impossible";
 }
 
-std::string convertToFloat(std::string &str, double *nbr, char *rest, char *c) {
+static std::string toFloat(std::string &str, double *nbr, char *rest, char *c) {
 
 	std::stringstream ss;
 
@@ -122,7 +123,7 @@ std::string convertToFloat(std::string &str, double *nbr, char *rest, char *c) {
 	return "impossible";
 }
 
-std::string convertToDouble(std::string &str, double *nbr, char *rest, char *c) {
+static std::string toDouble(std::string &str, double *nbr, char *rest, char *c) {
 
 	std::stringstream ss;
 
@@ -146,11 +147,10 @@ void ScalarConverter::convert(std::string str) {
 	double nbr = std::strtod(str.c_str(), &rest);
 	char c = 0;
 
-	std::cout << "char: " << convertToChar(str, &nbr, &c) << std::endl;
-
-	std::cout << "int: " << convertToInt(str, &nbr, rest, &c) << std::endl;
-
-	std::cout << "float: " << convertToFloat(str, &nbr, rest, &c) << std::endl;
-
-	std::cout << "double: " << convertToDouble(str, &nbr, rest, &c) << std::endl;
+	std::cout
+		<< "char: " + toChar(str, &nbr, &c) + "\n"
+		<< "int: " + toInt(str,&nbr, rest, &c) + "\n"
+		<< "float: " + toFloat(str, &nbr, rest, &c) + "\n"
+		<< "double: " + toDouble(str, &nbr, rest, &c)
+		<< std::endl;
 }
