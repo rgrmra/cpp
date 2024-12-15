@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:14:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/14 16:25:08 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/15 14:55:07 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ScalarConverter::~ScalarConverter(void) {
 
 static void printAsChar(double n, bool ok) {
 
-	if (not ok || n < CHAR_MIN || n > CHAR_MAX)
+	if (not ok || n < CHAR_MIN || n > CHAR_MAX || std::isnan(n) || std::isinf(n))
 		std::cout << "char: impossible" << std::endl;
 	else if (not std::isprint(static_cast<char>(n)))
 		std::cout << "Non displayable" << std::endl;

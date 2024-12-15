@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 21:21:51 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/14 22:47:18 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/15 14:48:00 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 #include "Base.hpp"
 
 class C : public Base {
-	public:
-		C(void);
-		~C(void);
+
 };
 
 #endif /* C_HPP */

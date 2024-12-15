@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2024/12/14 22:51:20 by rde-mour         ###   ########.org.br    #
+#    Updated: 2024/12/15 14:50:54 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,9 @@ BLUE				= $(shell tput setaf 4)
 MAGENT				= $(shell tput setaf 5)
 RESET				= $(shell tput sgr0)
 
-NAME				= serialize
+NAME				= identify
 
 FILES				= Base.cpp \
-					  A.cpp \
-					  B.cpp \
-					  C.cpp \
 					  main.cpp
 
 OBJS				= $(FILES:%.cpp=%.o)
