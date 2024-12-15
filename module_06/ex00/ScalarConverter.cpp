@@ -6,20 +6,17 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:14:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/15 14:55:07 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/15 20:04:13 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <cctype>
 #include <cfloat>
 #include <climits>
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
-#include <iomanip>
 #include <iostream>
-#include <ostream>
 #include <string>
 
 ScalarConverter::ScalarConverter(void) {
