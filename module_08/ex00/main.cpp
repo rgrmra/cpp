@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 19:30:13 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/15 19:45:45 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/17 18:56:30 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main(void) {
 		std::deque<int>::iterator it;
 
 		for (std::size_t i = 1; i < 11; i++) {
-			it = easyfind(deq, i * 2);
+			it = easyfind(deq, i * 3);
 			std::cout << "Easyfind finds: " << *it << std::endl;
 		}
 	} catch (std::exception &exception) {
@@ -67,7 +67,7 @@ int main(void) {
 		std::list<int>::iterator it;
 
 		for (std::size_t i = 1; i < 11; i++) {
-			it = easyfind(lst, i * 2);
+			it = easyfind(lst, i * 4);
 			std::cout << "Easyfind finds: " << *it << std::endl;
 		}
 	} catch (std::exception &exception) {
