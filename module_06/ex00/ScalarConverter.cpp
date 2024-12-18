@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:14:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/15 20:04:13 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/18 17:47:38 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,13 @@ void ScalarConverter::convert(std::string str) {
 
 	if (str.size() == 1 && not std::isdigit(str.at(0)))
 		n = static_cast<char>(str.at(0));
-	else if ((std::strlen(rest) == 1 && rest[0] == 'f' && str.find("."))
-		|| str == "-inff" || str == "inff" || str == "+inff" || str == "nanf")
+	else if ((std::strlen(rest) == 1 && static_cast<ssize_t>(str.find(".")) != -1
+		&& rest[0] == 'f') || str == "-inff" || str == "inff" || str == "+inff"
+		|| str == "nanf")
 		n = std::strtof(str.c_str(), NULL);
-	else if ((not std::strlen(rest) && str.size() && str.find("."))
-		|| str == "-inf" || str == "inf" || str == "+inf" || str == "nan")
+	else if ((not std::strlen(rest) && static_cast<ssize_t>(str.find(".")) != -1
+		&&str.size()) || str == "-inf" || str == "inf" || str == "+inf"
+		|| str == "nan")
 		n = std::strtod(str.c_str(), NULL);
 	else if (not std::strlen(rest) && not std::isnan(n) && not std::isinf(n)
 			&& static_cast<ssize_t>(str.find_last_not_of("-+0123456789")) != -1)
