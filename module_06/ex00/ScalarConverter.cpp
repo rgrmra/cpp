@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:14:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/18 17:47:38 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/18 17:50:43 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,12 +88,11 @@ void ScalarConverter::convert(std::string str) {
 		&& rest[0] == 'f') || str == "-inff" || str == "inff" || str == "+inff"
 		|| str == "nanf")
 		n = std::strtof(str.c_str(), NULL);
-	else if ((not std::strlen(rest) && static_cast<ssize_t>(str.find(".")) != -1
-		&&str.size()) || str == "-inf" || str == "inf" || str == "+inf"
-		|| str == "nan")
+	else if ((not std::strlen(rest) && str.find(".") && str.size())
+		|| str == "-inf" || str == "inf" || str == "+inf" || str == "nan")
 		n = std::strtod(str.c_str(), NULL);
 	else if (not std::strlen(rest) && not std::isnan(n) && not std::isinf(n)
-			&& static_cast<ssize_t>(str.find_last_not_of("-+0123456789")) != -1)
+		&& static_cast<ssize_t>(str.find_last_not_of("-+0123456789")) != -1)
 		n = std::atoi(str.c_str());
 	else
 		ok = false;
