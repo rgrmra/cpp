@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:46:45 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/15 19:01:33 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/19 17:30:05 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 	
@@ -20,6 +20,7 @@ int main(void) {
 	std::cout << "DEFAULT CONSTRUCTOR TEST" << std::endl;
 	Array<int> *arr1 = new Array<int>();
 	std::cout << "size: " << arr1->size() << std::endl;
+	std::cout << *arr1 << std::endl;
 
 	std::cout << "\nDEFAULT PARAMETERIZED CONSTRUCTOR TEST" << std::endl;
 	Array<int> *arr2 = new Array<int>(5);
