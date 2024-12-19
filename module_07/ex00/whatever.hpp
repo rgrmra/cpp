@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:23:59 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/15 15:58:28 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2024/12/19 17:23:21 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 template<typename T>
 void swap(T &x, T &y) {
 
-	T &z = x;
+	T z = x;
 	x = y;
 	y = z;
 }
