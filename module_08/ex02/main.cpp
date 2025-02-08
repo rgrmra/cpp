@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 19:11:39 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/01/04 16:16:06 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/02/08 13:16:27 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void stack_test(void) {
 
 void my_test_add(MutantStack<int> &ms, std::list<int> &l, int value) {
 
+	std::cout << "add: " << value << std::endl;
 	ms.push(value);
 	l.push_back(value);
 }
@@ -78,8 +79,12 @@ void my_test_puts(MutantStack<int> &ms, std::list<int> &l) {
 
 void my_test_pop(MutantStack<int> &ms, std::list<int> &l) {
 
-	ms.pop();
-	l.pop_back();
+	std::cout << "pop: " << std::endl;
+
+	if (ms.size())
+		ms.pop();
+	if (l.size())
+		l.pop_back();
 }
 
 int main(void) {
@@ -104,6 +109,7 @@ int main(void) {
 	my_test_puts(ms, l);
 	my_test_pop(ms, l);
 	my_test_puts(ms, l);
+	my_test_pop(ms, l);
 	my_test_pop(ms, l);
 	my_test_puts(ms, l);
 	my_test_add(ms, l, rand() % 200);
