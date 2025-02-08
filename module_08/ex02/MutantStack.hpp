@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 18:33:18 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/01/04 16:16:13 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/02/08 13:05:13 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,25 @@
 template <typename T>
 class MutantStack : public std::stack<T> {
 	public:
-		typedef typename std::stack<T>::container_type::iterator iterator;
-		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
-
 		MutantStack(void);
 		MutantStack(const MutantStack<T> &src);
 		MutantStack &operator=(const MutantStack<T> &rhs);
 		~MutantStack(void);
 
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+		typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
+		typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
+
 		iterator begin(void);
 		const_iterator begin(void) const;
 		iterator end(void);
 		const_iterator end(void) const;
+
+		reverse_iterator rbegin(void);
+		const_reverse_iterator rbegin(void) const;
+		reverse_iterator rend(void);
+		const_reverse_iterator rend(void) const;
 
 };
 
