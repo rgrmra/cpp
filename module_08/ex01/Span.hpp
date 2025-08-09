@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:23:42 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/17 21:43:18 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/09 11:01:12 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ class Span {
 		Span(void);
 
 	public:
-		Span(unsigned int limit);
+		Span(const unsigned int &limit);
 		Span(const Span &src);
 		Span &operator=(const Span &rhs);
 		~Span(void);
 
-		void addNumber(int number);
+		void addNumber(const int &number);
 
 		int shortestSpan(void);
 		int longestSpan(void);

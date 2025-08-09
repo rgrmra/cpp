@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 19:30:13 by rde-mour          #+#    #+#             */
-/*   Updated: 2024/12/18 18:25:35 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/09 11:23:46 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,20 @@ int main(int argc, char *argv[]) {
 	srand(std::time(NULL));
 	try {
 		if (argc != 5)
-			throw std::runtime_error("Span: Usage: ./span <limit> <quantity> <min> <max>");
+			throw std::runtime_error("span: Usage: ./span <size> <quantity> <min> <max>");
 
-		int limit = std::atoi(argv[1]);
+		int size = std::atoi(argv[1]);
 		int quantity = std::atoi(argv[2]);
 		int min = std::atoi(argv[3]);
 		int max = std::atoi(argv[4]);
 
 		if (quantity < 1)
-			throw std::runtime_error("Span: Exception: Invalid Quantity");
+			throw std::runtime_error("span: Exception: Invalid Quantity");
 
 		if (min > max)
-			throw std::runtime_error("Span: Exception: min greater than max");
+			throw std::runtime_error("span: Exception: min greater than max");
 
-		span = new Span(limit);
+		span = new Span(size);
 
 		std::cout << "[ ";
 		for (int i = 0; i < quantity; i++) {
