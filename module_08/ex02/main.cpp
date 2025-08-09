@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 19:11:39 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/02/08 13:16:27 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/09 14:42:20 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ void my_test_puts(MutantStack<int> &ms, std::list<int> &l) {
 	puts(l);
 }
 
+void my_test_rputs(MutantStack<int> &ms, std::list<int> &l) {
+	
+	rputs(ms);
+	rputs(l);
+}
+
 void my_test_pop(MutantStack<int> &ms, std::list<int> &l) {
 
 	std::cout << "pop: " << std::endl;
@@ -87,15 +93,27 @@ void my_test_pop(MutantStack<int> &ms, std::list<int> &l) {
 		l.pop_back();
 }
 
+void my_test_const_puts(const MutantStack<int> &cms, const std::list<int> &cl) {
+
+	const_puts(cms);
+	const_puts(cl);
+}
+
+void my_test_const_rputs(const MutantStack<int> &cms, const std::list<int> &cl) {
+
+	const_rputs(cms);
+	const_rputs(cl);
+}
+
 int main(void) {
 
-	std::cout << "STACK TEST" << std::endl;
+	std::cout << "STACK TEST ITERATOR" << std::endl;
 	stack_test();
 
-	std::cout << "\nLIST TEST" << std::endl;
+	std::cout << "\nLIST TEST ITERATOR" << std::endl;
 	list_test();
 
-	std::cout << "\nMY TEST" << std::endl;
+	std::cout << "\nMY TEST ITERATOR" << std::endl;
 	srand(static_cast<unsigned int>(time(0)));
 
 	MutantStack<int> ms;
@@ -119,6 +137,18 @@ int main(void) {
 	my_test_add(ms, l, rand() % 200);
 	my_test_add(ms, l, rand() % 200);
 	my_test_puts(ms, l);
+
+	std::cout << "\nMY TEST REVERSE ITERATOR" << std::endl;
+	my_test_rputs(ms, l);
+
+	const MutantStack<int> cms(ms);
+	const std::list<int> cl(l);
+
+	std::cout << "\nMY TEST CONST ITERATOR" << std::endl;
+	my_test_const_puts(cms, cl);
+
+	std::cout << "\nMY TEST CONST REVERSE ITERATOR" << std::endl;
+	my_test_const_rputs(cms, cl);
 
 	return EXIT_SUCCESS;
 }

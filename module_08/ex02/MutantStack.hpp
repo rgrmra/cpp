@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 18:33:18 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/02/08 13:05:13 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/09 12:12:09 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,60 @@ void puts(T container) {
 	}
 
 	for (; it != container.end(); it++)
+		std::cout << ", " << *it;
+	
+	std::cout << " ]" << std::endl;
+}
+
+template <typename T>
+void rputs(T container) {
+	
+	std::cout << "[ ";
+
+	typename T::reverse_iterator it = container.rbegin();
+
+	if (container.size()) {
+		std::cout << *it;
+		it++;
+	}
+
+	for (; it != container.rend(); it++)
+		std::cout << ", " << *it;
+	
+	std::cout << " ]" << std::endl;
+}
+
+template <typename T>
+void const_puts(T container) {
+	
+	std::cout << "[ ";
+
+	typename T::iterator it = container.begin();
+
+	if (container.size()) {
+		std::cout << *it;
+		it++;
+	}
+
+	for (; it != container.end(); it++)
+		std::cout << ", " << *it;
+	
+	std::cout << " ]" << std::endl;
+}
+
+template <typename T>
+void const_rputs(T container) {
+	
+	std::cout << "[ ";
+
+	typename T::reverse_iterator it = container.rbegin();
+
+	if (container.size()) {
+		std::cout << *it;
+		it++;
+	}
+
+	for (; it != container.rend(); it++)
 		std::cout << ", " << *it;
 	
 	std::cout << " ]" << std::endl;
