@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 19:30:13 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/09 11:23:46 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/14 14:56:58 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ int main(int argc, char *argv[]) {
 		if (argc != 5)
 			throw std::runtime_error("span: Usage: ./span <size> <quantity> <min> <max>");
 
-		int size = std::atoi(argv[1]);
-		int quantity = std::atoi(argv[2]);
-		int min = std::atoi(argv[3]);
-		int max = std::atoi(argv[4]);
+		long size = std::atoi(argv[1]);
+		long quantity = std::atoi(argv[2]);
+		long min = std::atoi(argv[3]);
+		long max = std::atoi(argv[4]);
 
 		if (quantity < 1)
 			throw std::runtime_error("span: Exception: Invalid Quantity");
@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
 
 		std::cout << "[ ";
 		for (int i = 0; i < quantity; i++) {
-			int num = min + rand() % (max - min + 1);
+			long num = min + rand() % (max - min + 1);
 			span->addNumber(num);
 			std::cout << num << " ";
 		}
