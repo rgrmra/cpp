@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:09:09 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/15 23:50:10 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/16 18:23:03 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ std::pair<bool, std::string> BitcoinExchange::isValidValue(const std::string &ex
 	if (value < 0)
 		return std::make_pair(false, "not a positive number.");
 
-	if (value > std::numeric_limits<int>::max())
+	if (value > 1000)
 		return std::make_pair(false, "too large a number.");
 
 	return std::make_pair(true, "");

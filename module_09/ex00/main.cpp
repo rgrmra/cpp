@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 19:55:05 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/15 23:44:43 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/16 18:22:33 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 		btc.calculateExchange(argv[1]);
 	
 	} catch (std::exception &e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 		return EXIT_FAILURE;
 	}
 
