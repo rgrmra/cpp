@@ -6,11 +6,12 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 11:14:25 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/16 18:08:24 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/16 18:22:03 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+#include <cctype>
 #include <cstdio>
 #include <iostream>
 #include <sstream>
@@ -95,6 +96,9 @@ std::pair<bool, std::string> RPN::calculate(const std::string &expression) {
 	std::string value;
 
 	while (getline(iss, value, ' ')) {
+
+		if (value.empty())
+			continue;
 
 		std::cout << value << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 11:12:33 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/16 18:02:28 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/16 18:29:15 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class RPN {
 
 	private:
-		std::stack<std::string> stack;
+		std::stack<double> stack;
 
 		long sum(const long &number1, const long &number2);
 		long sub(const long &number1, const long &number2);
