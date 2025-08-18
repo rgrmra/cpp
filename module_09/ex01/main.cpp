@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 11:10:20 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/18 09:26:24 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/18 12:26:31 by rgrmra           ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <cstdlib>
 #include <exception>
 #include <iostream>
-#include <utility>
 
 int main(int argc, char **argv) {
 
@@ -22,9 +21,7 @@ int main(int argc, char **argv) {
 		if (argc != 2)
 			throw std::exception();
 
-		RPN rpn;
-		double value = rpn.calculate(argv[1]);
-		std::cout << value << std::endl;
+		std::cout << RPN().calculate(argv[1]) << std::endl;
 	} catch (std::exception &e) {
 		std::cerr << "Error" << std::endl;
 		return EXIT_FAILURE;
