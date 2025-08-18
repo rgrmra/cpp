@@ -6,14 +6,14 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 11:14:25 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/16 18:22:03 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/18 09:28:28 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
-#include <cctype>
 #include <cstdio>
-#include <iostream>
+#include <cstdlib>
+#include <exception>
 #include <sstream>
 #include <utility>
 
@@ -38,38 +38,67 @@ RPN::~RPN(void) {
 
 }
 
-//long sum(const long &number1, const long &number2) {
-//
-//	int a;
-//	int b;
-//
-//	return a + b;
-//}
-//
-//long sub(const long &number1, const long &number2) {
-//
-//	int a;
-//	int b;
-//
-//	return a + b;
-//}
-//
-//long mult(const long &number1, const long &number2) {
-//
-//	int a;
-//	int b;
-//
-//	return a + b;
-//}
-//
-//long div(const long &number1, const long &number2) {
-//
-//	int a;
-//	int b;
-//
-//	return a + b;
-//}
+void RPN::push(const std::string &value) {
 
+	char **rest = NULL;
+	double number = strtod(value.c_str(), rest);
+	if (rest)
+		throw std::exception();
+
+	stack.push(number);
+}
+
+double RPN::pop(void) {
+
+	if (stack.empty())
+		throw std::exception();
+
+	double value = stack.top();
+
+	stack.pop();
+
+	return value;
+}
+
+void RPN::sum(void) {
+
+	int b = pop();
+	int a = pop();
+
+	double value = a + b;
+
+	stack.push(value);
+}
+
+void RPN::sub(void) {
+
+	int b = pop();
+	int a = pop();
+
+	double value = a - b;
+
+	stack.push(value);
+}
+
+void RPN::mult(void) {
+
+	int b = pop();
+	int a = pop();
+
+	double value = a * b;
+
+	stack.push(value);
+}
+
+void RPN::div(void) {
+
+	int b = pop();
+	int a = pop();
+	
+	double value = a / b;
+
+	stack.push(value);
+}
 
 std::string RPN::replace(const std::string &buffer, const char &from, const char &to) {
 	
@@ -83,7 +112,7 @@ std::string RPN::replace(const std::string &buffer, const char &from, const char
 	return str;
 }
 
-std::pair<bool, std::string> RPN::calculate(const std::string &expression) {
+double RPN::calculate(const std::string &expression) {
 
 	std::string buffer = expression;
 	buffer = replace(buffer, '\t', ' ');
@@ -100,8 +129,23 @@ std::pair<bool, std::string> RPN::calculate(const std::string &expression) {
 		if (value.empty())
 			continue;
 
-		std::cout << value << std::endl;
+		if (value.size() > 1)
+			throw std::exception();
+
+		if (value == "*")
+			mult();
+		else if (value == "/")
+			div();
+		else if (value == "+")
+			sum();
+		else if (value == "-")
+			sub();
+		else
+			push(value);
 	}
 
-	return std::make_pair(true, "");
+	if (stack.size() != 1)
+		throw std::exception();
+
+	return pop();
 }

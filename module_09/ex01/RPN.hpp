@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 11:12:33 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/16 18:29:15 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/18 09:19:41 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ class RPN {
 	private:
 		std::stack<double> stack;
 
-		long sum(const long &number1, const long &number2);
-		long sub(const long &number1, const long &number2);
-		long mult(const long &number1, const long &number2);
-		long div(const long &number1, const long &number2);
+		void push(const std::string &value);
+		double pop(void);
+
+		void sum(void);
+		void sub(void);
+		void mult(void);
+		void div(void);
 
 		std::string replace(const std::string &buffer, const char &from, const char &to);
 
@@ -34,7 +37,7 @@ class RPN {
 		RPN &operator=(const RPN &rhs);
 		~RPN(void);
 
-		std::pair<bool, std::string> calculate(const std::string &expression);
+		double calculate(const std::string &expression);
 
 };
 
