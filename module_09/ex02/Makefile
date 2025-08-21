@@ -6,7 +6,7 @@
 #    By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:31:36 by rde-mour          #+#    #+#              #
-#    Updated: 2025/08/18 12:31:08 by rde-mour         ###   ########.org.br    #
+#    Updated: 2025/08/21 19:17:21 by rde-mour         ###   ########.org.br    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ RESET				= $(shell tput sgr0)
 NAME				= PmergeMe
 
 FILES				= main.cpp \
-					  PmergeMe.cpp
+					  PmergeMe.cpp \
+					  vector.cpp \
+					  deque.cpp
 
 OBJS				= $(FILES:%.cpp=%.o)
 

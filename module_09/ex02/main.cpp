@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:32:06 by rgrmra            #+#    #+#             */
-/*   Updated: 2025/08/19 18:10:33 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/21 18:31:21 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #include <cstdlib>
 #include <exception>
 #include <iostream>
+#include <list>
 #include <stdexcept>
+#include <vector>
 
 int main(int argc, char **argv) {
 
