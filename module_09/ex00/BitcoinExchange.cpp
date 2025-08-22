@@ -6,21 +6,19 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:09:09 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/16 18:23:03 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/22 18:56:47 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+#include <cstdio>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
 #include <iostream>
-#include <limits>
 #include <map>
 #include <sstream>
-#include <stdexcept>
 #include <string>
-#include <utility>
 
 BitcoinExchange::BitcoinExchange(void) {
 
@@ -119,9 +117,6 @@ std::pair<bool, std::string> BitcoinExchange::isValidValue(const std::string &ex
 	if (value < 0)
 		return std::make_pair(false, "not a positive number.");
 
-	if (value > 1000)
-		return std::make_pair(false, "too large a number.");
-
 	return std::make_pair(true, "");
 }
 
@@ -156,6 +151,8 @@ void BitcoinExchange::calculate(const std::string &date, const std::string &valu
 		throw std::runtime_error("no registers at database.");
 
 	double dvalue = strtod(value.c_str(), NULL);
+	if (dvalue > 1000)
+		throw std::runtime_error("too large a number.");
 
 	std::map<std::string, double>::iterator it = _database.find(date);
 	if (it != _database.end()) {
