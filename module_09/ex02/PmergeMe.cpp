@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:36:02 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/21 19:57:10 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/22 18:40:24 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,4 @@ void PmergeMe::sort(const std::string &list) {
 
 	print_status(_vector, "std::vector<int>", vectorClock);
 	print_status(_deque, "std::deque<int>", dequeClock);
-
-	std::cout << ((is_container_ordered(_vector)) ? "ordered" : "unordered") << std::endl;
-	std::cout << ((is_container_ordered(_deque)) ? "ordered" : "unordered") << std::endl;
-	std::cout << _vector.size() << std::endl;
 }

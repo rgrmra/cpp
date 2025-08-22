@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:34:10 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/21 19:10:06 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/22 18:39:10 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,21 @@ class PmergeMe {
 		std::deque<int> _deque;
 		size_t level;
 
-		void parseInput(const std::string &list);
-
 		std::pair<int, int> jacobSthal(const int &value);
 
-		std::deque<int>::iterator dequeBinarySearch(std::deque<int> &main,
-				const int &target, const size_t &length);
+		void vectorMerge(void);
+		void vectorInsert(void);
+		void vectorInsertions(std::vector<int> &main, const size_t &index);
 		std::vector<int>::iterator vectorBinarySearch(std::vector<int> &main,
 				const int &target, const size_t &length);
 
-		void vectorMerge(void);
 		void dequeMerge(void);
-		void vectorInsert(void);
 		void dequeInsert(void);
-		void vectorInsertions(std::vector<int> &main, const size_t &index);
 		void dequeInsertions(std::deque<int> &main, const size_t &index);
+		std::deque<int>::iterator dequeBinarySearch(std::deque<int> &main,
+				const int &target, const size_t &length);
+
+		void parseInput(const std::string &list);
 
 	public:
 		PmergeMe(void);
@@ -52,7 +52,6 @@ class PmergeMe {
 		void sort(const std::string &list);
 
 };
-
 
 template <typename C>
 void print_container(const C &container)
@@ -75,16 +74,6 @@ void print_status(const C &container, const std::string &name,
 		<< " : " << std::fixed << std::setprecision(5)
 		<< clock.second / CLOCKS_PER_SEC << " us"
 		<< std::endl;
-}
-
-template <typename C>
-bool is_container_ordered(const C &container) {
-
-	for (size_t i = 1; i < container.size(); i++)
-		if (container[i - 1] > container[i])
-			return false;
-
-	return true;
 }
 
 #endif /* PMERGEME_HPP */
