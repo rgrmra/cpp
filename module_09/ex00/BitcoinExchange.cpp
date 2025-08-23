@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:09:09 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/22 18:56:47 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/23 12:23:28 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <utility>
 
 BitcoinExchange::BitcoinExchange(void) {
 
@@ -60,7 +61,8 @@ std::string BitcoinExchange::trim(const std::string &str) {
 	return str.substr(start, end - start + 1);
 }
 
-std::pair<std::string, std::string> BitcoinExchange::separate(const std::string &line, const char &separator) {
+std::pair<std::string, std::string> BitcoinExchange::separate(
+		const std::string &line, const char &separator) {
 
 		std::istringstream iss(line);
 		std::string date;
@@ -86,17 +88,24 @@ std::string BitcoinExchange::getFileBuffer(const std::string &path) {
 	return buffer.str();
 }
 
-std::pair<bool, std::string> BitcoinExchange::isValidDate(const std::string &date) {
+std::pair<bool, std::string> BitcoinExchange::isValidDate(
+		const std::string &date) {
 
-	struct tm tm_date = {};
+	struct std::tm tm_date = {};
 	if (!strptime(date.c_str(), "%Y-%m-%d", &tm_date))
 		return std::make_pair(false, "bad input => " + date);
 
-	time_t timestamp = std::mktime(&tm_date);
-	if (timestamp == -1)
-		return std::make_pair(false, "bad input +> " + date);
+	std::time_t actual_time;
+	std::time(&actual_time);
 
-	struct tm tm_date_new = *std::localtime(&timestamp);
+	std::time_t timestamp = std::mktime(&tm_date);
+	if (timestamp == -1)
+		return std::make_pair(false, "bad input => " + date);
+
+	if (timestamp > actual_time)
+			return std::make_pair(false, "I can't speculate => " + date);
+
+	struct std::tm tm_date_new = *std::localtime(&timestamp);
 	char buffer[11];
 	std::strftime(buffer, sizeof(buffer), "%Y-%m-%d", &tm_date_new);
 
