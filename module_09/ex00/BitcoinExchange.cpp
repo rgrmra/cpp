@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:09:09 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/23 12:23:28 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/23 13:32:14 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <sstream>
@@ -154,6 +155,26 @@ void BitcoinExchange::loadDatabase(const std::string &database) {
 	}
 }
 
+std::string BitcoinExchange::formatNumber(const double &number) {
+
+	std::ostringstream oss;
+	oss << std::fixed << std::setprecision(6) << number;
+
+	std::string value = oss.str();
+
+	size_t pos = value.find('.');
+	if (pos == std::string::npos)
+		return value;
+
+	while (value.size() > pos + 1 && value[value.size() - 1] == '0')
+		value.erase(value.size() - 1, 1);
+
+	if (value[value.size() - 1] == '.')
+	    value.erase(value.size() - 1, 1);
+
+	return value;
+}
+
 void BitcoinExchange::calculate(const std::string &date, const std::string &value) {
 
 	if (_database.empty())
@@ -163,9 +184,12 @@ void BitcoinExchange::calculate(const std::string &date, const std::string &valu
 	if (dvalue > 1000)
 		throw std::runtime_error("too large a number.");
 
+	std::ostringstream oss;
+	oss << date << " => " << value << " = ";
+
 	std::map<std::string, double>::iterator it = _database.find(date);
 	if (it != _database.end()) {
-		std::cout << date << " => " << value << " = " << dvalue * it->second << std::endl;
+		std::cout << oss.str() << formatNumber(dvalue * it->second) << std::endl;
 		return;
 	}
 
@@ -176,7 +200,7 @@ void BitcoinExchange::calculate(const std::string &date, const std::string &valu
 		closest = it;
 
 	if (closest != _database.end()) {
-		std::cout << date << " => " << value << " = " << dvalue * it->second << std::endl;
+		std::cout << oss.str() << formatNumber(dvalue * closest->second) << std::endl;
 		return;
 	}
 

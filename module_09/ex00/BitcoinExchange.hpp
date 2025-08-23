@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:02:34 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/15 23:00:14 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/23 13:19:16 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class BitcoinExchange {
 		std::pair<bool, std::string> isValidDate(const std::string &date);
 		std::pair<bool, std::string> isValidValue(const std::string &exchange);
 
+		std::string formatNumber(const double &number);
 		void calculate(const std::string &date, const std::string &value);
 
 	public:
