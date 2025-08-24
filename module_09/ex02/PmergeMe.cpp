@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:36:02 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/22 18:40:24 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/23 21:44:11 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <deque>
-#include <sstream>
 #include <string>
 #include <vector>
 
@@ -63,32 +62,25 @@ std::pair<int, int> PmergeMe::jacobSthal(const int &value) {
 	return std::make_pair(a, b);
 }
 
-void PmergeMe::parseInput(const std::string &list) {
+void PmergeMe::parseInput(char **list) {
 
-	std::string input = list;
-	for (std::string::size_type i = 0; i < list.size(); ++i)
-		if (std::isspace(input[i]))
-			input[i] = ' ';
+	while (*list) {
 
-	if (input.find_first_not_of(" 0123456789") != std::string::npos)
-		throw std::runtime_error("invalid input");
+		std::string value = *list;
 
-	std::string value;
-	std::istringstream iss(input);
+		if (value.find_first_not_of("0123456789") != std::string::npos)
+			throw std::runtime_error("invalid input: " + value);
 
-	while (std::getline(iss, value, ' ')) {
-
-		char **rest = NULL;
-		int number = std::strtod(value.c_str(), rest);
-		if (rest)
-			throw std::runtime_error("invalid input");
+		int number = std::strtod(value.c_str(), NULL);
 
 		_vector.push_back(number);
 		_deque.push_back(number);
+
+		list++;
 	}
 }
 
-void PmergeMe::sort(const std::string &list) {
+void PmergeMe::sort(char **list) {
 
 	_vector.clear();
 	_deque.clear();

@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:32:06 by rgrmra            #+#    #+#             */
-/*   Updated: 2025/08/21 18:31:21 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/23 21:44:52 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 #include <cstdlib>
 #include <exception>
 #include <iostream>
-#include <list>
-#include <stdexcept>
-#include <vector>
 
 int main(int argc, char **argv) {
 
 	try {
-		if (argc != 2)
+		if (argc < 2)
 			throw std::runtime_error("no input");
 
-		PmergeMe().sort(argv[1]);
+		PmergeMe().sort(&argv[1]);
 
 	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;

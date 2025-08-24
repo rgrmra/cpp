@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:34:10 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/22 18:39:10 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/23 21:40:15 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class PmergeMe {
 		std::deque<int>::iterator dequeBinarySearch(std::deque<int> &main,
 				const int &target, const size_t &length);
 
-		void parseInput(const std::string &list);
+		void parseInput(char **list);
 
 	public:
 		PmergeMe(void);
@@ -49,7 +49,7 @@ class PmergeMe {
 		PmergeMe &operator=(const PmergeMe &rhs);
 		~PmergeMe(void);
 
-		void sort(const std::string &list);
+		void sort(char **list);
 
 };
 
