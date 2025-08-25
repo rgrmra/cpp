@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:09:09 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/25 19:06:41 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/25 20:12:01 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
-#include <exception>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -118,6 +117,9 @@ std::pair<bool, std::string> BitcoinExchange::isValidDate(
 }
 
 std::pair<bool, std::string> BitcoinExchange::isValidValue(const std::string &exchange) {
+
+	if (exchange.empty())
+		return std::make_pair(false, "empty number.");
 
 	if (exchange.find_first_not_of("0123456789.") != std::string::npos)
 		return std::make_pair(false, "not a valid number.");
