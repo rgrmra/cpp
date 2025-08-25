@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:09:09 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/23 21:32:11 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/25 19:06:41 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,8 +181,10 @@ void BitcoinExchange::calculate(const std::string &date, const std::string &valu
 		throw std::runtime_error("no registers at database.");
 
 	double dvalue = strtod(value.c_str(), NULL);
-	if (dvalue > 1000)
-		throw std::runtime_error("too large a number.");
+	if (dvalue > 1000) {
+		std::cout << "Error: too large a number." << std::endl;
+		return;
+	}
 
 	std::ostringstream oss;
 	oss << date << " => " << value << " = ";
