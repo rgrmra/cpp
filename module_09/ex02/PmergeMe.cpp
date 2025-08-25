@@ -6,7 +6,7 @@
 /*   By: rde-mour <rde-mour@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:36:02 by rde-mour          #+#    #+#             */
-/*   Updated: 2025/08/23 21:44:11 by rde-mour         ###   ########.org.br   */
+/*   Updated: 2025/08/25 19:13:08 by rde-mour         ###   ########.org.br   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <deque>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -67,6 +68,8 @@ void PmergeMe::parseInput(char **list) {
 	while (*list) {
 
 		std::string value = *list;
+		if (value.empty())
+			throw std::runtime_error("invalid input");
 
 		if (value.find_first_not_of("0123456789") != std::string::npos)
 			throw std::runtime_error("invalid input: " + value);
@@ -86,9 +89,6 @@ void PmergeMe::sort(char **list) {
 	_deque.clear();
 
 	parseInput(list);
-
-	if (_vector.empty())
-		throw std::runtime_error("empty input");
 
 	std::pair<std::clock_t, double> vectorClock;
 	std::pair<std::clock_t, double> dequeClock;
